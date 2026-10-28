@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FM Padel London | Membership by application</title>
+<meta name="description" content="A private padel community for London's construction and facilities management people. Membership by application.">
+<meta property="og:title" content="FM Padel London">
+<meta property="og:description" content="The industry, on court. Membership by application.">
+<meta property="og:url" content="https://fmpadellondon.com/">
+<meta property="og:image" content="https://fmpadellondon.com/assets/hero-mono-2000.jpg">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============ FM Padel London: Brand v3 (Members' club) ============ */
+:root{
+  --noir:#0B0B0C;      /* Noir: base */
+  --noir-2:#141416;    /* Noir raised: form fields, panels */
+  --ivory:#F2EEE6;     /* Ivory: primary text on dark */
+  --stone:#A39E95;     /* Stone: secondary text */
+  --ash:#857F77;       /* Ash: tertiary, fine print (4.9:1 on Noir) */
+  --hair:rgba(242,238,230,.14); /* Hairline */
+  --champagne:#D8CBAE; /* Champagne: the accent (labels, CTA, italic word) */
+  --ball:#D4FF2E;      /* Ball: tiny detail only (logo dot) */
+  --serif:'Instrument Serif','Times New Roman',Georgia,serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --pad:24px; --sec:120px; --ease:cubic-bezier(.2,.7,.2,1);
+}
+@media(min-width:900px){:root{--pad:56px;--sec:200px}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--noir)}
+body{margin:0;font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.7;color:var(--ivory);background:var(--noir);-webkit-font-smoothing:antialiased}
+/* film grain */
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.07;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1280px;margin:0 auto;padding:0 var(--pad)}
+.label{font:500 .7rem/1.4 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--champagne);margin:0}
+.label.muted{color:var(--stone)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(3.6rem,12vw,9.5rem);line-height:.92}
+h2{font-size:clamp(2.6rem,7vw,5.6rem);line-height:.98}
+h3{font-size:1.9rem;line-height:1.1}
+em{font-style:italic;color:var(--champagne)}
+p{margin:0}
+.lede{color:var(--stone);font-size:1.05rem;max-width:38ch}
+.rule{height:1px;background:var(--hair);border:0;margin:0}
+section{padding:var(--sec) 0}
+
+/* CTA: hairline outline, champagne fill on hover */
+.cta{display:inline-flex;align-items:center;gap:18px;height:58px;padding:0 30px;border:1px solid var(--champagne);color:var(--ivory);text-decoration:none;font:400 .78rem var(--sans);letter-spacing:.2em;text-transform:uppercase;background:transparent;cursor:pointer;transition:background .6s var(--ease),color .6s var(--ease)}
+.cta::after{content:"";width:22px;height:1px;background:currentColor;transition:width .6s var(--ease)}
+.cta:hover{background:var(--champagne);color:var(--noir)} .cta:hover::after{width:34px}
+.cta.solid{background:var(--champagne);color:var(--noir)} .cta.solid:hover{background:var(--ivory);border-color:var(--ivory)}
+:focus-visible{outline:1px solid var(--champagne);outline-offset:4px}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .6s var(--ease),border-color .6s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(11,11,12,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--hair)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.mark{font:400 1.35rem/1 var(--serif);text-decoration:none;letter-spacing:.01em;display:flex;align-items:baseline;gap:2px}
+.mark i{width:5px;height:5px;border-radius:50%;background:var(--ball);display:inline-block;margin-left:3px}
+.nav a.req{font:400 .7rem var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;padding-bottom:4px;border-bottom:1px solid var(--champagne)}
+
+/* Hero */
+.hero{position:relative;min-height:min(100svh,980px);display:flex;align-items:flex-end;padding:0;overflow:hidden}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 45%;transform:scale(1.06);animation:drift 18s var(--ease) forwards;opacity:.62}
+@keyframes drift{to{transform:scale(1)}}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 70% 30%,transparent 0%,rgba(11,11,12,.55) 60%,rgba(11,11,12,.95) 100%),linear-gradient(180deg,rgba(11,11,12,.5) 0%,transparent 30%,rgba(11,11,12,.9) 88%,var(--noir) 100%)}
+.hero .wrap{position:relative;z-index:2;width:100%;padding-top:160px;padding-bottom:72px}
+.hero h1{margin:28px 0 34px}
+.hero .foot{display:flex;flex-direction:column;gap:30px}
+@media(min-width:900px){.hero .wrap{padding-bottom:110px}.hero .foot{flex-direction:row;align-items:flex-end;justify-content:space-between}}
+
+/* Membership */
+.intro{display:grid;gap:40px}
+@media(min-width:900px){.intro{grid-template-columns:5fr 7fr;gap:120px;align-items:end}}
+.terms{margin-top:96px;display:grid;border-top:1px solid var(--hair)}
+@media(min-width:900px){.terms{grid-template-columns:1fr 1fr}.terms .term+.term{border-left:1px solid var(--hair);padding-left:56px}}
+.term{padding:48px 0;border-bottom:1px solid var(--hair);display:grid;gap:18px}
+@media(min-width:900px){.term{padding:56px 56px 56px 0}}
+.term .n{font:400 4.6rem/1 var(--serif);color:var(--champagne)}
+.term p{color:var(--stone);max-width:42ch}
+.fine{color:var(--ash);font-size:.8rem;margin-top:28px;max-width:70ch}
+
+/* Calendar */
+.cal{display:grid;gap:56px}
+@media(min-width:900px){.cal{grid-template-columns:1fr 1fr;gap:120px;align-items:center}}
+.photo{aspect-ratio:4/5;overflow:hidden;position:relative}
+.photo img{width:100%;height:100%;object-fit:cover;opacity:.8}
+.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(11,11,12,.6))}
+.dates{list-style:none;margin:56px 0 0;padding:0;border-top:1px solid var(--hair)}
+.dates li{display:grid;grid-template-columns:120px 1fr;gap:24px;padding:28px 0;border-bottom:1px solid var(--hair)}
+.dates .d{font:500 .7rem/1.9 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--champagne)}
+.dates h3{font-size:1.6rem}
+.dates p{color:var(--stone);font-size:.95rem;margin-top:6px}
+
+/* Application */
+.apply{background:linear-gradient(180deg,var(--noir) 0%,#111113 100%);border-top:1px solid var(--hair)}
+.apply .grid{display:grid;gap:64px}
+@media(min-width:900px){.apply .grid{grid-template-columns:5fr 7fr;gap:120px}}
+form{display:grid;gap:34px 40px}
+@media(min-width:700px){form{grid-template-columns:1fr 1fr}.full{grid-column:1/-1}}
+.f label{display:block;font:500 .66rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--stone);margin-bottom:12px}
+.f label span{color:var(--ash);letter-spacing:.14em}
+.f input,.f select,.f textarea{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(242,238,230,.26);color:var(--ivory);font:300 1.05rem var(--sans);padding:6px 0 12px;border-radius:0;transition:border-color .4s;-webkit-appearance:none;appearance:none}
+.f textarea{resize:vertical;min-height:84px;line-height:1.5}
+.f select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M.5.5l5 5 5-5' stroke='%23A39E95' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center}
+.f select option{background:var(--noir-2);color:var(--ivory)}
+.f input::placeholder,.f textarea::placeholder{color:var(--ash)}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--champagne)}
+.check{display:flex;gap:14px;align-items:flex-start;font-size:.9rem;color:var(--stone);cursor:pointer}
+.check input{appearance:none;-webkit-appearance:none;flex:none;width:18px;height:18px;border:1px solid rgba(242,238,230,.4);margin:3px 0 0;display:grid;place-items:center;cursor:pointer}
+.check input:checked{background:var(--champagne);border-color:var(--champagne)}
+.check input:checked::after{content:"";width:8px;height:4px;border-left:1.5px solid var(--noir);border-bottom:1.5px solid var(--noir);transform:rotate(-45deg) translate(1px,-1px)}
+.privacy{color:var(--ash);font-size:.78rem;line-height:1.6}
+.privacy a{color:var(--stone)}
+.status{font-size:.85rem;color:#E8A598;min-height:1.2em}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.thanks{display:none;border:1px solid var(--hair);padding:48px 32px}
+@media(min-width:700px){.thanks{padding:64px}}
+.thanks.show{display:block;animation:fadeup 1.2s var(--ease) both}
+.thanks h3{font-size:clamp(2.4rem,5vw,3.6rem);margin:20px 0 18px}
+.thanks p{color:var(--stone);max-width:46ch}
+.nom{margin-top:44px;padding-top:28px;border-top:1px solid var(--hair)}
+.nom .row{display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;margin-top:16px}
+.nom input{flex:1 1 240px;background:transparent;border:0;border-bottom:1px solid rgba(242,238,230,.26);color:var(--ivory);font:300 .95rem var(--sans);padding:6px 0 10px}
+
+footer{border-top:1px solid var(--hair);padding:40px 0 48px;color:var(--ash);font-size:.75rem;letter-spacing:.04em}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:space-between}
+footer a{color:var(--stone);text-decoration:none}
+
+/* Slow fade-up on scroll */
+@keyframes fadeup{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity 1.4s var(--ease),transform 1.4s var(--ease)}
+.js .reveal.in{opacity:1;transform:none}
+.js .reveal.d1{transition-delay:.15s}.js .reveal.d2{transition-delay:.3s}.js .reveal.d3{transition-delay:.45s}
+.static .hero img{animation:none;transform:none}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.hero img{animation:none;transform:none}}
+</style>
+<script>document.documentElement.classList.add(/[?&]static\b/.test(location.search)?"static":"js")</script>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="FM Padel London">FM Padel London<i></i></a>
+    <a class="req" href="#apply">Request to join</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO. IMAGE SLOT: hero-mono-*.jpg is a CC0 placeholder (see footer credit).
+     Replace with real member photography (with consent), monochrome. -->
+<section class="hero">
+  <img src="assets/hero-mono-1000.jpg" srcset="assets/hero-mono-1000.jpg 1000w, assets/hero-mono-2000.jpg 2000w" sizes="100vw" alt="Players on an indoor padel court, in black and white" fetchpriority="high">
+  <div class="wrap">
+    <p class="label reveal">Construction &amp; FM padel club &middot; London</p>
+    <h1 class="reveal d1">The industry,<br><em>on court.</em></h1>
+    <div class="foot reveal d2">
+      <p class="lede">A private padel community for the people who build, run and look after London's buildings. Membership by application.</p>
+      <a class="cta" href="#apply">Apply for membership</a>
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIP -->
+<section id="membership">
+  <div class="wrap">
+    <div class="intro">
+      <div class="reveal">
+        <p class="label">Membership</p>
+        <h2 style="margin-top:28px">Founding<br><em>Members.</em></h2>
+      </div>
+      <p class="lede reveal d1">Open to construction and facilities management: cleaning, security, soft FM, property and workplace. Site or office. Every level of player.</p>
+    </div>
+    <div class="terms">
+      <div class="term reveal">
+        <span class="n">4</span>
+        <h3>Complimentary games</h3>
+        <p>For the first 50 approved members.</p>
+      </div>
+      <div class="term reveal d1">
+        <span class="n">5</span>
+        <h3>Nominations rewarded</h3>
+        <p>Nominate a colleague. Their first game is complimentary, and you earn one complimentary game for each approved nominee, up to five.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR. IMAGE SLOT: court-mono-*.jpg is a CC0 placeholder. -->
+<section id="calendar" style="padding-top:0">
+  <div class="wrap cal">
+    <div class="photo reveal"><img src="assets/court-mono-1000.jpg" srcset="assets/court-mono-1000.jpg 1000w, assets/court-mono-2000.jpg 2000w" sizes="(min-width:900px) 580px, 100vw" alt="An indoor padel court in the evening, in black and white" loading="lazy"></div>
+    <div>
+      <p class="label reveal">The season</p>
+      <h2 class="reveal d1" style="margin-top:28px">Thursday<br><em>evenings.</em></h2>
+      <ul class="dates">
+        <li class="reveal"><span class="d">From 26 Nov</span><div><h3>Weekly sessions</h3><p>Including First Serve, for those new to the game.</p></div></li>
+        <li class="reveal d1"><span class="d">Season one</span><div><h3>The corporate league</h3><p>Company teams from across the industry.</p></div></li>
+        <li class="reveal d2"><span class="d">28 Jan 2027</span><div><h3>The Handover Cup</h3><p>A charity evening. Construction versus FM.</p></div></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION -->
+<section class="apply" id="apply">
+  <div class="wrap grid">
+    <div class="reveal">
+      <p class="label">Request to join</p>
+      <h2 style="margin-top:28px">Apply for<br><em>membership.</em></h2>
+      <p class="lede" style="margin-top:32px">Every application is reviewed personally.</p>
+    </div>
+    <div>
+    <!--
+      ===================================================================
+      FORM ENDPOINT: SWAP ONE VALUE
+      Set FORM_ENDPOINT (and FORM_MODE) in the <script> at the bottom.
+      The form POSTs FormData, so it works with:
+      1. Google Sheet + Apps Script (free; data lands in your own Sheet).
+         See apps-script-example.gs. Paste the /exec URL, FORM_MODE="no-cors".
+      2. Formspree (free tier 50/month): "https://formspree.io/f/XXXX", FORM_MODE="json".
+      3. Tally / Google Forms: simplest no-code, but you'd link/embed their form.
+      4. Netlify Forms (if hosted on Netlify): add data-netlify="true" to <form>,
+         FORM_ENDPOINT="/".
+      While FORM_ENDPOINT is empty the form runs in demo mode (nothing sent).
+      ===================================================================
+    -->
+    <form id="apply-form" class="reveal d1" novalidate>
+      <div class="f"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+      <div class="f"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="f"><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization" required></div>
+      <div class="f"><label for="role">Role / title</label><input id="role" name="role" type="text" autocomplete="organization-title" required></div>
+      <div class="f">
+        <label for="sector">Sector</label>
+        <select id="sector" name="sector" required>
+          <option value="">Select</option>
+          <option>Construction</option>
+          <option>FM</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="f">
+        <label for="level">Playing level</label>
+        <select id="level" name="level" required>
+          <option value="">Select</option>
+          <option value="never">Never played</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </div>
+      <div class="f full"><label for="why">Why do you want to join? <span>(optional)</span></label><textarea id="why" name="why_join" maxlength="400" rows="3" placeholder="A line or two is plenty"></textarea></div>
+      <div class="f"><label for="linkedin">LinkedIn <span>(optional)</span></label><input id="linkedin" name="linkedin_url" type="url" inputmode="url" autocomplete="url" placeholder="linkedin.com/in/"></div>
+      <div class="f"><label for="ref">Nominated by <span>(code, optional)</span></label><input id="ref" name="nominated_by" type="text" autocomplete="off"></div>
+      <input class="hp" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <input type="hidden" name="source" id="source">
+      <div class="full"><label class="check"><input type="checkbox" id="consent" name="marketing_consent" value="yes"><span>Send me occasional news about sessions, the league and events. Unsubscribe any time.</span></label></div>
+      <p class="privacy full">We use your details only to review your application and run FM Padel London membership, complimentary games and nominations. We never sell your data, and only send news if you tick the box. Questions or deletion: <a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a>.</p>
+      <div class="full"><button class="cta solid" type="submit">Submit application</button></div>
+      <p class="status full" id="status" role="status" aria-live="polite"></p>
+    </form>
+
+    <div class="thanks" id="thanks" tabindex="-1">
+      <p class="label">Thank you</p>
+      <h3>Application <em>received.</em></h3>
+      <p>We review every request personally and will be in touch shortly.</p>
+      <div class="nom">
+        <p class="label muted">Your nomination link</p>
+        <div class="row">
+          <input type="text" id="mylink" readonly aria-label="Your nomination link">
+          <button class="cta" type="button" id="copy">Copy</button>
+        </div>
+        <p class="privacy" style="margin-top:16px">Nominate a colleague: their first game is complimentary, and you earn one complimentary game per approved nominee, up to five.</p>
+        <p style="margin-top:24px"><a class="req" href="#" data-wa style="font:400 .7rem var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--champagne);padding-bottom:4px">Members' WhatsApp</a></p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; <span id="yr">2026</span> FM Padel London</span>
+    <a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a>
+    <span>Placeholder photography: Samson Ssemakadde, CC0, Wikimedia Commons</span>
+  </div>
+</footer>
+
+<script>
+/* ===================== CONFIG: EDIT THESE ===================== */
+var FORM_ENDPOINT = "";     // e.g. "https://script.google.com/macros/s/XXXX/exec" or "https://formspree.io/f/XXXX"
+var FORM_MODE     = "json"; // "json" for Formspree, "no-cors" for Google Apps Script
+var WHATSAPP_URL  = "";     // e.g. "https://chat.whatsapp.com/XXXXXXXX" (members' group, share after approval)
+var SITE_URL      = "https://fmpadellondon.com/";
+var REPLY_TIME    = "shortly"; // e.g. "within 48 hours" once Sam sets a review time
+/* ============================================================== */
+
+(function(){
+  var params = new URLSearchParams(location.search);
+  var ref = params.get("ref");
+  if (ref) document.getElementById("ref").value = ref.replace(/[^\w-]/g,"").slice(0,40);
+  document.getElementById("source").value = params.get("utm_source") || document.referrer || "direct";
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  document.querySelector("#thanks p:not(.label)").textContent = "We review every request personally and will be in touch " + REPLY_TIME + ".";
+
+  // Nav background after scroll
+  var nav = document.getElementById("nav");
+  var onScroll = function(){ nav.classList.toggle("scrolled", window.scrollY > 40); };
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  // Slow fade-up on scroll
+  var els = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+    }, {rootMargin:"0px 0px -8% 0px"});
+    els.forEach(function(el){ io.observe(el); });
+  } else els.forEach(function(el){ el.classList.add("in"); });
+
+  document.querySelectorAll("[data-wa]").forEach(function(a){
+    if (WHATSAPP_URL) { a.href = WHATSAPP_URL; a.target = "_blank"; a.rel = "noopener"; }
+    else a.addEventListener("click", function(e){ e.preventDefault(); alert("The members' WhatsApp link is shared after approval."); });
+  });
+
+  // Nomination code: initials + 4 chars, e.g. "SA7K2Q". The tracker sheet maps codes to members.
+  function makeCode(name){
+    var ini = (name.match(/\b\w/g)||["X"]).join("").toUpperCase().slice(0,3);
+    return ini + Math.random().toString(36).slice(2,6).toUpperCase();
+  }
+
+  var form = document.getElementById("apply-form"), status = document.getElementById("status");
+  form.addEventListener("submit", function(e){
+    e.preventDefault();
+    status.textContent = "";
+    var li = document.getElementById("linkedin");
+    if (li.value && !/^https?:\/\//i.test(li.value)) li.value = "https://" + li.value.trim();
+    if (!form.checkValidity()) {
+      var bad = form.querySelector(":invalid");
+      status.textContent = "Please complete: " + (bad.labels && bad.labels[0] ? bad.labels[0].childNodes[0].textContent.trim() : "all required fields") + ".";
+      bad.focus(); return;
+    }
+    if (form._gotcha.value) return; // honeypot
+    var data = new FormData(form);
+    var myCode = makeCode(data.get("name"));
+    data.append("my_nomination_code", myCode);
+    data.append("marketing_consent_value", document.getElementById("consent").checked ? "yes" : "no");
+    data.append("submitted_at", new Date().toISOString());
+    var btn = form.querySelector("button[type=submit]"); btn.disabled = true; btn.textContent = "Submitting";
+
+    var done = function(){
+      form.style.display = "none";
+      document.getElementById("mylink").value = SITE_URL + "?ref=" + myCode;
+      var t = document.getElementById("thanks"); t.classList.add("show"); t.focus();
+    };
+    if (!FORM_ENDPOINT) { console.warn("Demo mode: FORM_ENDPOINT not set", Object.fromEntries(data)); return done(); }
+
+    var opts = FORM_MODE === "no-cors"
+      ? { method:"POST", mode:"no-cors", body:data }
+      : { method:"POST", body:data, headers:{ "Accept":"application/json" } };
+    fetch(FORM_ENDPOINT, opts).then(function(r){
+      if (FORM_MODE === "no-cors" || r.ok) return done();
+      throw new Error(r.status);
+    }).catch(function(){
+      btn.disabled = false; btn.textContent = "Submit application";
+      status.textContent = "Something went wrong. Please try again or email hello@fmpadellondon.com.";
+    });
+  });
+
+  document.getElementById("copy").addEventListener("click", function(){
+    var i = document.getElementById("mylink"); i.select();
+    (navigator.clipboard ? navigator.clipboard.writeText(i.value) : Promise.resolve(document.execCommand("copy")))
+      .then(function(){ document.getElementById("copy").textContent = "Copied"; });
+  });
+})();
+</script>
+</body>
+</html>

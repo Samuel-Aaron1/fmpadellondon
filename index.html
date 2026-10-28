@@ -69,6 +69,9 @@ section{padding:var(--sec) 0}
 /* Hero */
 .hero{position:relative;min-height:min(100svh,980px);display:flex;align-items:flex-end;padding:0;overflow:hidden}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:60% 45%;transform:scale(1.06);animation:drift 18s var(--ease) forwards;opacity:.62}
+.hero-video-wrap{position:absolute;inset:0;background:#0b0b0c;overflow:hidden}
+.hero .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;opacity:.66}
+.hero-video-wrap::before{content:"";position:absolute;inset:0;background:url(assets/hero-loop-poster.jpg) center/cover no-repeat;opacity:0}
 @keyframes drift{to{transform:scale(1)}}
 .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 70% 30%,transparent 0%,rgba(11,11,12,.55) 60%,rgba(11,11,12,.95) 100%),linear-gradient(180deg,rgba(11,11,12,.5) 0%,transparent 30%,rgba(11,11,12,.9) 88%,var(--noir) 100%)}
 .hero .wrap{position:relative;z-index:2;width:100%;padding-top:160px;padding-bottom:72px}
@@ -140,7 +143,8 @@ footer a{color:var(--stone);text-decoration:none}
 .js .reveal.in{opacity:1;transform:none}
 .js .reveal.d1{transition-delay:.15s}.js .reveal.d2{transition-delay:.3s}.js .reveal.d3{transition-delay:.45s}
 .static .hero img{animation:none;transform:none}
-@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.hero img{animation:none;transform:none}}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.hero img{animation:none;transform:none}.hero .hero-video{display:none}.hero-video-wrap::before{opacity:.66}}
+.static .hero .hero-video{display:none}.static .hero-video-wrap::before{opacity:.66}
 </style>
 <script>document.documentElement.classList.add(/[?&]static\b/.test(location.search)?"static":"js")</script>
 </head>
@@ -155,10 +159,16 @@ footer a{color:var(--stone);text-decoration:none}
 
 <main id="top">
 
-<!-- HERO. IMAGE SLOT: hero-mono-*.jpg is a CC0 placeholder (see footer credit).
-     Replace with real member photography (with consent), monochrome. -->
+<!-- HERO. Video loop; poster image shows for reduced-motion users. Replace with real member footage (with consent), monochrome. -->
 <section class="hero">
-  <img src="assets/hero-mono-1000.jpg" srcset="assets/hero-mono-1000.jpg 1000w, assets/hero-mono-2000.jpg 2000w" sizes="100vw" alt="Players on an indoor padel court, in black and white" fetchpriority="high">
+  <!-- HERO VIDEO: 20s black-and-white loop (padel, construction, FM), AI-generated footage, no real people or brands. -->
+  <div class="hero-video-wrap" aria-hidden="true">
+    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-loop-poster.jpg" disablepictureinpicture>
+      <source src="assets/hero-loop-720.mp4" type="video/mp4" media="(max-width: 900px)">
+      <source src="assets/hero-loop-1080.webm" type="video/webm">
+      <source src="assets/hero-loop-1080.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="wrap">
     <p class="label reveal">Construction &amp; FM padel club &middot; London</p>
     <h1 class="reveal d1">The industry,<br><em>on court.</em></h1>
@@ -382,6 +392,13 @@ var REPLY_TIME    = "shortly"; // e.g. "within 48 hours" once Sam sets a review 
       .then(function(){ document.getElementById("copy").textContent = "Copied"; });
   });
 })();
+</script>
+<script>
+(function(){var v=document.querySelector('.hero-video');if(!v)return;
+var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');
+function apply(){if((rm&&rm.matches)||document.documentElement.classList.contains('static')){v.pause();v.removeAttribute('autoplay');}else{var p=v.play();if(p&&p.catch)p.catch(function(){});}}
+apply();if(rm&&rm.addEventListener)rm.addEventListener('change',apply);
+document.addEventListener('visibilitychange',function(){if(document.hidden)v.pause();else apply();});})();
 </script>
 </body>
 </html>

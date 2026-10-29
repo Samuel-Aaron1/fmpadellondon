@@ -145,6 +145,25 @@ footer a{color:var(--stone);text-decoration:none}
 .static .hero img{animation:none;transform:none}
 @media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.hero img{animation:none;transform:none}.hero .hero-video{display:none}.hero-video-wrap::before{opacity:.66}}
 .static .hero .hero-video{display:none}.static .hero-video-wrap::before{opacity:.66}
+
+/* Countdown + why */
+.count{margin-top:40px;padding-top:28px;border-top:1px solid var(--hair)}
+.count-label{font:500 .66rem/1.6 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--champagne)}
+.count-row{display:flex;gap:44px;margin-top:20px}
+.count-row div{display:flex;flex-direction:column;gap:8px}
+.cn{font:400 clamp(3rem,6vw,4.4rem)/1 var(--serif);color:var(--ivory);font-variant-numeric:tabular-nums}
+.cu{font:500 .62rem var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--ash)}
+.count-note{color:var(--stone);font-size:.85rem;margin-top:20px}
+.count.closed .count-row{display:none}
+@media(min-width:900px){.terms3{grid-template-columns:1fr 1fr 1fr}.terms3 .term+.term{padding-left:40px}.terms3 .term{padding-right:40px}}
+.why{margin-top:80px;display:grid;border-top:1px solid var(--hair)}
+@media(min-width:700px){.why{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.why{grid-template-columns:repeat(4,1fr)}}
+.w{padding:40px 28px 44px 0;border-bottom:1px solid var(--hair);display:grid;gap:14px;align-content:start}
+@media(min-width:700px){.w+.w{border-left:1px solid var(--hair);padding-left:28px}}
+@media(min-width:700px) and (max-width:1099px){.w:nth-child(3){border-left:0;padding-left:0}}
+.wn{font:italic 400 1.4rem/1 var(--serif);color:var(--champagne)}
+.w p{color:var(--stone);font-size:.95rem}
 </style>
 <script>document.documentElement.classList.add(/[?&]static\b/.test(location.search)?"static":"js")</script>
 </head>
@@ -184,38 +203,75 @@ footer a{color:var(--stone);text-decoration:none}
   <div class="wrap">
     <div class="intro">
       <div class="reveal">
-        <p class="label">Membership</p>
+        <p class="label">The Founding 50</p>
         <h2 style="margin-top:28px">Founding<br><em>Members.</em></h2>
       </div>
-      <p class="lede reveal d1">Open to construction and facilities management: cleaning, security, soft FM, property and workplace. Site or office. Every level of player.</p>
+      <div class="reveal d1">
+        <p class="lede">The first 50 approved members join as Founding Members. It's our thank-you for being here from the start, and it's only offered once.</p>
+        <div class="count" id="countdown" aria-live="polite">
+          <p class="count-label" id="countLabel">Founding membership closes when the first season opens</p>
+          <div class="count-row" id="countRow">
+            <div><span class="cn" id="cd-d">&ndash;</span><span class="cu">Days</span></div>
+            <div><span class="cn" id="cd-h">&ndash;</span><span class="cu">Hours</span></div>
+            <div><span class="cn" id="cd-m">&ndash;</span><span class="cu">Minutes</span></div>
+          </div>
+          <p class="count-note" id="countNote">First game: Thursday 26 November, 6pm. Or sooner, once all 50 places are taken.</p>
+        </div>
+      </div>
     </div>
-    <div class="terms">
+    <div class="terms terms3">
       <div class="term reveal">
         <span class="n">4</span>
         <h3>Complimentary games</h3>
-        <p>For the first 50 approved members.</p>
+        <p>Four games on us, played at our community sessions within six months of joining.</p>
       </div>
       <div class="term reveal d1">
         <span class="n">5</span>
         <h3>Nominations rewarded</h3>
-        <p>Nominate a colleague. Their first game is complimentary, and you earn one complimentary game for each approved nominee, up to five.</p>
+        <p>Nominate a colleague and their first game is complimentary. You earn one more complimentary game for every approved nominee, up to five.</p>
+      </div>
+      <div class="term reveal d2">
+        <span class="n">50</span>
+        <h3>Founding status</h3>
+        <p>Only 50 places, and only before the first season opens. After that, founding membership closes for good.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CALENDAR. IMAGE SLOT: court-mono-*.jpg is a CC0 placeholder. -->
+<!-- WHY JOIN -->
+<section id="why" style="padding-top:0">
+  <div class="wrap">
+    <div class="intro">
+      <div class="reveal">
+        <p class="label">Why join</p>
+        <h2 style="margin-top:28px">More than<br><em>a game.</em></h2>
+      </div>
+      <p class="lede reveal d1">For people across construction and FM, including cleaning, security, soft FM, property and workplace. Site or office, every level of player.</p>
+    </div>
+    <div class="why">
+      <div class="w reveal"><span class="wn">I</span><h3>The right room</h3><p>Meet clients, contractors and peers from across construction and FM, away from the desk and the tender table.</p></div>
+      <div class="w reveal d1"><span class="wn">II</span><h3>No joining fee</h3><p>Membership is free. You only pay for the games you play, and your first four are on us.</p></div>
+      <div class="w reveal d2"><span class="wn">III</span><h3>By application</h3><p>Every member is approved personally, or nominated by someone already in the club.</p></div>
+      <div class="w reveal d3"><span class="wn">IV</span><h3>The game itself</h3><p>Fast, social and easy to pick up. Good for fitness, good for teams, and good fun on a Thursday night.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEASON. IMAGE SLOT: court-mono-*.jpg is a CC0 placeholder. -->
 <section id="calendar" style="padding-top:0">
   <div class="wrap cal">
     <div class="photo reveal"><img src="assets/court-mono-1000.jpg" srcset="assets/court-mono-1000.jpg 1000w, assets/court-mono-2000.jpg 2000w" sizes="(min-width:900px) 580px, 100vw" alt="An indoor padel court in the evening, in black and white" loading="lazy"></div>
     <div>
       <p class="label reveal">The season</p>
-      <h2 class="reveal d1" style="margin-top:28px">Thursday<br><em>evenings.</em></h2>
+      <h2 class="reveal d1" style="margin-top:28px">A year<br><em>on court.</em></h2>
       <ul class="dates">
-        <li class="reveal"><span class="d">From 26 Nov</span><div><h3>Weekly sessions</h3><p>Including First Serve, for those new to the game.</p></div></li>
-        <li class="reveal d1"><span class="d">Season one</span><div><h3>The corporate league</h3><p>Company teams from across the industry.</p></div></li>
-        <li class="reveal d2"><span class="d">28 Jan 2027</span><div><h3>The Handover Cup</h3><p>A charity evening. Construction versus FM.</p></div></li>
+        <li class="reveal"><span class="d">Compete</span><div><h3>The corporate league</h3><p>Company teams from across construction and FM, playing for the title.</p></div></li>
+        <li class="reveal d1"><span class="d">Give back</span><div><h3>Charity cups</h3><p>Starting with the Handover Cup: Construction versus FM, in aid of the Lighthouse Construction Industry Charity.</p></div></li>
+        <li class="reveal d2"><span class="d">Connect</span><div><h3>Networking evenings</h3><p>Relaxed games and conversation, with a First Serve slot for anyone new to padel.</p></div></li>
+        <li class="reveal d3"><span class="d">Play anytime</span><div><h3>Ad-hoc matches</h3><p>Find a game whenever suits you, through our members' ladder on Rankedin.</p></div></li>
       </ul>
+      <p class="fine reveal">Starter games from November &middot; Handover Cup, January &middot; League from February. Played in East London, at Padium Canary Wharf and Stratford Padel Club.</p>
     </div>
   </div>
 </section>
@@ -399,6 +455,13 @@ var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)');
 function apply(){if((rm&&rm.matches)||document.documentElement.classList.contains('static')){v.pause();v.removeAttribute('autoplay');}else{var p=v.play();if(p&&p.catch)p.catch(function(){});}}
 apply();if(rm&&rm.addEventListener)rm.addEventListener('change',apply);
 document.addEventListener('visibilitychange',function(){if(document.hidden)v.pause();else apply();});})();
+</script>
+<script>
+(function(){var T=Date.parse("2026-11-26T18:00:00Z"),el=document.getElementById("countdown");if(!el)return;
+function p(n){return String(n).padStart(2,"0")}
+function t(){var ms=T-Date.now();if(ms<=0){el.classList.add("closed");document.getElementById("countLabel").textContent="Founding membership has closed";document.getElementById("countNote").textContent="The first season is under way. Applications for membership remain open.";return false}
+var m=Math.floor(ms/6e4);document.getElementById("cd-d").textContent=Math.floor(m/1440);document.getElementById("cd-h").textContent=p(Math.floor(m/60)%24);document.getElementById("cd-m").textContent=p(m%60);return true}
+if(t())setInterval(t,15000)})();
 </script>
 </body>
 </html>

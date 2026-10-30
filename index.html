@@ -191,7 +191,7 @@ footer{padding:var(--s-20) 0 24px}
 @media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;filter:none}.statement .w{opacity:1}html{scroll-behavior:auto}}
 @media(max-width:767px){.hero .media img{object-position:60% center}.hero::after{background:linear-gradient(0deg,rgba(1,23,41,.88) 0%,rgba(1,23,41,.55) 45%,rgba(1,23,41,.25) 100%)}}
 @media(max-width:480px){.nav{top:50px}.nav.scrolled{top:0}.nav .btn{height:40px;font-size:.8125rem;padding-left:14px}.nav .btn i{width:30px;height:30px}.mark{font-size:1.05rem}}
-.mark{position:relative;display:block;height:26px}.mark img{height:26px;width:auto;display:block;transition:opacity .35s ease}.mark .lg-pri{position:absolute;left:0;top:0;opacity:0}.nav.scrolled .mark .lg-pri{opacity:1}.nav.scrolled .mark .lg-rev{opacity:0}@media(max-width:480px){.mark,.mark img{height:20px}}
+.mark{position:relative;display:inline-grid;align-items:center}.mark>*{grid-area:1/1;transition:opacity .35s ease}.mark .lg-txt{opacity:1}.mark .lg-pri{height:26px;width:auto;display:block;opacity:0}.nav.scrolled .mark .lg-pri{opacity:1}.nav.scrolled .mark .lg-txt{opacity:0}@media(max-width:480px){.mark .lg-pri{height:20px}}
 
 /* Ball icon (brand) */
 .bi{display:inline-block;flex:none;vertical-align:middle}
@@ -207,7 +207,7 @@ footer{padding:var(--s-20) 0 24px}
 </head><body>
 <div class="bar">Founding 50 now open. First game Thursday 26 November, 6pm.</div>
 <header class="nav" id="nav"><div class="wrap in">
-  <a class="mark" href="#top" aria-label="FM Padel London"><img class="lg-rev" src="logo-reversed.png" alt="FM Padel London"><img class="lg-pri" src="logo-primary.png" alt="" aria-hidden="true"></a>
+  <a class="mark" href="#top" aria-label="FM Padel London"><span class="lg-txt">FM Padel London</span><img class="lg-pri" src="logo-primary.png" alt="" aria-hidden="true"></a>
   <nav class="links" aria-label="Main"><a href="#why">Why join</a><a href="#membership">Founding 50</a><a href="#season">The season</a><a href="#league">The league</a><a href="#faq">FAQ</a></nav>
   <a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
 </div></header>

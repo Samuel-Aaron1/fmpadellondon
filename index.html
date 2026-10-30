@@ -1,359 +1,296 @@
 <!doctype html>
-<html lang="en-GB">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>FM Padel London | Membership by application</title>
-<meta name="description" content="A private padel community for London's construction and facilities management people. Membership by application.">
-<meta property="og:title" content="FM Padel London">
-<meta property="og:description" content="The industry, on court. Membership by application.">
-<meta property="og:url" content="https://fmpadellondon.com/">
-<meta property="og:image" content="https://fmpadellondon.com/assets/hero-mono-2000.jpg">
-<meta name="theme-color" content="#00224B">
+<html lang="en-GB"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FM Padel London | The industry, on court</title>
+<meta name="description" content="An invite-only padel community for London's construction and facilities management professionals. No joining fee. Founding 50 now open.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ============ FM Padel London: Brand v4 "Rally" (bright, sporty, social) ============ */
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
+<style>/* FM Padel London — tokens v4 ("Framer Club"). Primary reference: Padelon; plus Baseline Club, Running Club, Surfing. */
 :root{
-  --lime:#C6F432;      /* Ball Lime: primary accent, CTAs, highlights */
-  --navy:#00224B;      /* Court Navy: feature sections, announcement bar */
-  --ink:#0A0A0A;       /* Ink: text on light, dark sections */
-  --white:#FFFFFF; --paper:#F7F7F5; /* light surfaces */
-  --grey:#5F6368; --grey-l:#9AA0A6; /* secondary text on light / on dark */
-  --line:#E2E2DE; --line-d:rgba(255,255,255,.16);
-  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-  --display:'Inter Tight','Inter',system-ui,sans-serif;
-  --pad:20px; --sec:88px; --r:14px; --ease:cubic-bezier(.2,.7,.2,1);
+  --c-lime:#C9F13E; --c-lime-hover:#D6F76A; --c-lime-press:#B6DE2A;   /* Padelon lime (ours #C6F432 → #C9F13E) */
+  --c-navy-950:#011729; --c-navy-900:#0E1B2C; --c-navy-800:#1A2433; --c-court:#1867D2; --c-sky:#9ECCF2; /* Padelon/Baseline deep navy + court blue */
+  --c-black:#000000; --c-ink:#0A0A0A; --c-grey-600:#6C6C6C; --c-grey-500:#6B7585; --c-grey-300:#DFDFDF;
+  --c-mist:#F4F6F8; --c-white:#FFFFFF; --c-hivis:#FF4F01; /* hi-vis: tags only (Surfing orange) */
+  --bg:var(--c-white); --bg-alt:var(--c-mist); --bg-dark:var(--c-navy-950);
+  --text:var(--c-black); --text-muted:var(--c-grey-600); --on-dark:#fff; --on-dark-muted:rgba(255,255,255,.62);
+  --line:var(--c-grey-300); --line-dark:rgba(255,255,255,.12); --glass:rgba(255,255,255,.10); --glass-line:rgba(255,255,255,.18);
+  --font-display:"Inter Tight",system-ui,sans-serif;  /* Neue Montreal equivalent */
+  --font-body:"Inter",system-ui,sans-serif; --font-mono:"JetBrains Mono",ui-monospace,monospace;
+  /* Type scale (measured on Padelon desktop; fluid down to mobile) */
+  --fs-mega:clamp(4rem,15vw,13rem);       /* footer wordmark 184px+ (Padelon/Running/Surfing) */
+  --fs-display:clamp(2.75rem,1.6rem + 3.6vw,4.25rem); /* 68px, weight 400, -0.027em */
+  --fs-statement:clamp(1.75rem,1rem + 2.6vw,3.25rem); /* 52px, -0.038em */
+  --fs-h2:clamp(2rem,1.4rem + 2vw,3rem);  /* 48px */
+  --fs-h3:clamp(1.5rem,1.3rem + .6vw,2rem);/* 32px */
+  --fs-h4:1.5rem;                          /* 24px/1.1 card titles */
+  --fs-lede:1.125rem; --fs-body:1rem; --fs-small:.875rem; --fs-label:.75rem;
+  --lh-tight:1.1; --lh-body:1.4; --tr-display:-0.027em; --tr-heading:-0.02em; --tr-body:-0.01em;
+  --fw-display:400; --fw-medium:500;
+  --s-1:4px;--s-2:8px;--s-3:12px;--s-4:16px;--s-5:20px;--s-6:24px;--s-8:32px;--s-10:40px;--s-12:48px;--s-16:64px;--s-20:80px;--s-30:120px;
+  --section-y:clamp(72px,5vw + 40px,120px); --container:1280px; --gutter:clamp(16px,4vw,80px); --gap:16px;
+  --r-sm:6px; --r-md:16px; --r-lg:20px; --r-xl:40px; --r-2xl:80px; --r-pill:999px;  /* Padelon radii */
+  --ease:cubic-bezier(.22,1,.36,1); --t-fast:200ms; --t-base:400ms; --t-reveal:900ms; --stagger:90ms;
 }
-@media(min-width:900px){:root{--pad:40px;--sec:140px}}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--ink)}
-body{margin:0;font-family:var(--sans);font-weight:400;font-size:17px;line-height:1.55;color:var(--ink);background:var(--white);-webkit-font-smoothing:antialiased}
-img{display:block;max-width:100%}
-a{color:inherit}
-.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
-.label{display:inline-flex;align-items:center;gap:10px;font:500 .82rem/1.4 var(--sans);color:inherit;margin:0}
-.label::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 3px rgba(198,244,50,.25)}
-.label.muted{opacity:.7}
-h1,h2,h3{font-family:var(--display);font-weight:600;margin:0;letter-spacing:-.035em}
-h1{font-size:clamp(3.2rem,9.5vw,8rem);line-height:.95}
-h2{font-size:clamp(2.4rem,5.6vw,4.4rem);line-height:1.02}
-h3{font-size:1.45rem;line-height:1.2;letter-spacing:-.02em}
-em{font-style:normal;background:var(--lime);color:var(--ink);padding:0 .14em;border-radius:.12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-p{margin:0}
-.lede{color:var(--grey);font-size:1.15rem;max-width:44ch}
-section{padding:var(--sec) 0}
+@media (prefers-reduced-motion:reduce){:root{--t-fast:0ms;--t-base:0ms;--t-reveal:0ms}}
 
-/* Buttons: lime block, arrow chip, nudge on hover */
-.cta{display:inline-flex;align-items:center;gap:12px;height:54px;padding:0 10px 0 22px;border:0;border-radius:10px;background:var(--lime);color:var(--ink);text-decoration:none;font:600 .98rem var(--sans);cursor:pointer;transition:transform .3s var(--ease),background .3s,box-shadow .3s;box-shadow:0 6px 24px rgba(198,244,50,.28)}
-.cta::after{content:"\2197";display:grid;place-items:center;width:36px;height:36px;border-radius:8px;background:var(--ink);color:var(--lime);font-size:1rem;transition:transform .3s var(--ease)}
-.cta:hover{transform:translateY(-2px)} .cta:hover::after{transform:rotate(45deg)}
-.cta.solid{background:var(--lime)}
-.cta.ghost{background:#fff;box-shadow:none}
-:focus-visible{outline:2px solid var(--lime);outline-offset:3px}
-
-/* Announcement bar + floating nav */
-.bar{background:var(--navy);color:#fff;text-align:center;font:500 .8rem/1 var(--sans);padding:11px var(--pad);position:relative;z-index:60}
-.bar b{color:var(--lime);font-weight:600}
-.nav{position:absolute;top:34px;left:0;right:0;z-index:50;padding-top:12px}
-.nav.scrolled{position:fixed;top:0}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;background:rgba(10,10,10,.42);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:14px;max-width:calc(1320px - 2*var(--pad));margin:0 var(--pad);padding:0 10px 0 20px;color:#fff}
-@media(min-width:1400px){.nav .wrap{margin:0 auto}}
-.mark{font:700 1.15rem/1 var(--display);letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:8px}
-.mark i{width:14px;height:14px;border-radius:50%;background:var(--lime);display:inline-block;order:-1}
-.navlinks{display:none;gap:28px;font-size:.9rem}
-.navlinks a{text-decoration:none;opacity:.85}.navlinks a:hover{opacity:1;color:var(--lime)}
-@media(min-width:900px){.navlinks{display:flex}}
-.nav a.req{background:var(--lime);color:var(--ink);font:600 .88rem var(--sans);text-decoration:none;padding:12px 16px;border-radius:9px}
-
-/* Hero */
-.hero{position:relative;min-height:min(100svh,940px);display:flex;align-items:flex-end;padding:0;overflow:hidden;color:#fff;background:var(--ink)}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-video-wrap{position:absolute;inset:0;background:var(--ink);overflow:hidden}
-.hero .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.9;filter:contrast(1.08) brightness(1.05)}
-.hero-video-wrap::before{content:"";position:absolute;inset:0;background:url(assets/hero-loop-poster.jpg) center/cover no-repeat;opacity:0}
-.hero-video-wrap::after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,34,75,.55),rgba(0,34,75,0) 55%);mix-blend-mode:multiply}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,10,.35) 0%,transparent 28%,transparent 50%,rgba(10,10,10,.78) 100%)}
-.hero .wrap{position:relative;z-index:2;width:100%;padding-top:180px;padding-bottom:56px}
-.hero h1{margin:22px 0 30px;max-width:12ch}
-.hero .lede{color:rgba(255,255,255,.86)}
-.hero .foot{display:flex;flex-direction:column;gap:26px}
-@media(min-width:900px){.hero .wrap{padding-bottom:72px}.hero .foot{flex-direction:row;align-items:flex-end;justify-content:space-between}}
-
-/* Marquee ticker */
-.ticker{background:var(--lime);color:var(--ink);overflow:hidden;white-space:nowrap;padding:16px 0;font:600 1.05rem var(--display);letter-spacing:-.01em}
-.ticker .t{display:inline-flex;gap:40px;animation:tick 32s linear infinite;padding-right:40px}
-.ticker span::after{content:"\25CF";margin-left:40px;font-size:.6em;vertical-align:middle}
-@keyframes tick{to{transform:translateX(-50%)}}
-
-/* Membership (light) */
-#membership{background:var(--paper)}
-.intro{display:grid;gap:36px}
-@media(min-width:900px){.intro{grid-template-columns:5fr 7fr;gap:96px;align-items:end}}
-.intro h2{margin-top:18px}
-.terms{margin-top:72px;display:grid;gap:16px}
-@media(min-width:900px){.terms{grid-template-columns:1fr 1fr}}
-.term{padding:34px;border-radius:var(--r);background:#fff;border:1px solid var(--line);display:grid;gap:14px;align-content:start;transition:transform .35s var(--ease),box-shadow .35s}
-.term:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(0,0,0,.07)}
-.term .n{font:600 4.6rem/1 var(--display);letter-spacing:-.05em;color:var(--ink);display:flex;align-items:flex-start}
-.term p{color:var(--grey);max-width:42ch}
-.term h3{font-size:1.35rem}
-.fine{color:var(--grey);font-size:.85rem;margin-top:26px;max-width:70ch}
-@media(min-width:900px){.terms3{grid-template-columns:1fr 1fr 1fr}}
-
-/* Countdown: navy scoreboard */
-.count{margin-top:34px;padding:26px 28px;border-radius:var(--r);background:var(--navy);color:#fff}
-.count-label{font:600 .82rem/1.5 var(--sans);color:var(--lime)}
-.count-row{display:flex;gap:12px;margin-top:16px}
-.count-row div{display:flex;flex-direction:column;gap:6px;background:rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;min-width:96px}
-.cn{font:600 clamp(2.4rem,5vw,3.6rem)/1 var(--display);letter-spacing:-.04em;font-variant-numeric:tabular-nums}
-.cu{font:500 .72rem var(--sans);text-transform:uppercase;letter-spacing:.12em;color:var(--grey-l)}
-.count-note{color:rgba(255,255,255,.75);font-size:.9rem;margin-top:16px}
-.count.closed .count-row{display:none}
-
-/* Why join (white, icon cards) */
-#why{background:var(--white);padding-top:var(--sec)!important}
-#why .intro{align-items:end}
-.why{margin-top:64px;display:grid;gap:16px}
-@media(min-width:700px){.why{grid-template-columns:1fr 1fr}}
-@media(min-width:1100px){.why{grid-template-columns:repeat(4,1fr)}}
-.w{padding:30px 26px 34px;border-radius:var(--r);background:var(--paper);border:1px solid var(--line);display:grid;gap:14px;align-content:start;transition:background .35s,transform .35s var(--ease)}
-.w:hover{background:var(--lime);transform:translateY(-4px)}
-.w:hover p{color:var(--ink)}
-.wn{display:grid;place-items:center;width:44px;height:44px;border-radius:10px;background:var(--ink);color:var(--lime);font:600 .95rem var(--display);margin-bottom:18px}
-.w p{color:var(--grey);font-size:.97rem}
-
-/* Season (navy) */
-#calendar{background:var(--navy);color:#fff;padding-top:var(--sec)!important}
-.cal{display:grid;gap:48px}
-@media(min-width:900px){.cal{grid-template-columns:1fr 1fr;gap:96px;align-items:center}}
-.photo{aspect-ratio:4/5;overflow:hidden;position:relative;border-radius:18px}
+*,*::before,*::after{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;font:400 var(--fs-body)/var(--lh-body) var(--font-body);letter-spacing:var(--tr-body);color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}a{color:inherit}p{margin:0}
+h1,h2,h3,h4{font-family:var(--font-display);font-weight:var(--fw-display);margin:0;letter-spacing:var(--tr-heading);line-height:var(--lh-tight)}
+h2{font-size:var(--fs-h2)}h3{font-size:var(--fs-h3)}h4{font-size:var(--fs-h4);font-weight:500}
+.wrap{max-width:calc(var(--container) + 2*var(--gutter));margin:0 auto;padding:0 var(--gutter)}
+section{padding:var(--section-y) 0}
+.muted{color:var(--text-muted)}
+.kicker{font:500 var(--fs-small)/1 var(--font-body);display:inline-flex;gap:8px;align-items:center;margin-bottom:20px}
+.kicker::before{content:"";width:14px;height:3px;border-radius:2px;background:var(--c-hivis)}
+.dark .kicker::before,.hero .kicker::before{text-shadow:none}
+.lede{font-size:var(--fs-lede);color:var(--text-muted);max-width:52ch}
+.dark{background:var(--bg-dark);color:var(--on-dark)}.dark .lede,.dark .muted{color:var(--on-dark-muted)}
+.alt{background:var(--bg-alt)}
+.hidden-until-real{display:none!important}
+:focus-visible{outline:2px solid var(--c-court);outline-offset:3px}
+/* Buttons: Padelon pill + circular arrow chip; arrow slides on hover */
+.btn{display:inline-flex;align-items:center;gap:12px;height:48px;padding:0 6px 0 20px;border-radius:var(--r-pill);font:500 .9375rem/1 var(--font-body);text-decoration:none;border:0;cursor:pointer;white-space:nowrap;transition:background var(--t-fast) var(--ease)}
+.btn i{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;overflow:hidden}
+.btn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transition:transform var(--t-base) var(--ease)}
+.btn:hover svg{animation:arr .5s var(--ease)}
+@keyframes arr{50%{transform:translateX(140%)}51%{transform:translateX(-140%)}100%{transform:none}}
+.btn-lime{background:var(--c-lime);color:#000}.btn-lime i{background:#000;color:#fff}.btn-lime:hover{background:var(--c-lime-hover)}
+.btn-white{background:#fff;color:#000}.btn-white i{background:var(--c-lime);color:#000}
+.btn-black{background:#000;color:#fff}.btn-black i{background:var(--c-lime);color:#000}
+.btn[disabled]{opacity:.5}
+/* Nav: transparent over hero, white on scroll (Padelon) */
+.bar{background:var(--c-lime);color:#000;text-align:center;font:500 .8125rem/1 var(--font-body);padding:10px var(--gutter)}
+.nav{position:fixed;left:0;right:0;top:34px;z-index:60;transition:top var(--t-base) var(--ease),background var(--t-base),box-shadow var(--t-base)}
+.nav .in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:24px;color:#fff}
+.nav.scrolled{top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}.nav.scrolled .in{color:#000}
+.mark{font:500 1.25rem/1 var(--font-display);letter-spacing:-.03em;text-decoration:none;white-space:nowrap}.mark sup{font-size:.55em}
+.links{display:none;gap:32px}.links a{text-decoration:none;font-size:.9375rem;opacity:.9}.links a:hover{opacity:1;text-decoration:underline;text-underline-offset:5px}
+@media(min-width:1024px){.links{display:flex}}
+/* Hero: full-bleed photo/video, content bottom-left, lede+avatars top-left (Padelon) */
+.hero{position:relative;min-height:100svh;padding:0;color:#fff;display:flex;align-items:flex-end;overflow:hidden;background:var(--c-navy-950)}
+.hero .media{position:absolute;inset:0;transform:scale(1.08);transition:transform 1.6s var(--ease)}.loaded .hero .media{transform:scale(1)}
+.hero .media picture{display:block;width:100%;height:100%}.hero .media img,.hero .media video{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(1,23,41,.78) 0%,rgba(1,23,41,.4) 45%,rgba(1,23,41,.05) 80%),linear-gradient(0deg,rgba(1,23,41,.6),transparent 45%)}
+.hero .wrap{position:relative;z-index:1;width:100%;padding-top:150px;padding-bottom:clamp(40px,7vw,96px);display:flex;flex-direction:column;justify-content:space-between;min-height:100svh}
+.hero .top{max-width:280px;font-size:var(--fs-small);color:rgba(255,255,255,.88)}
+.chip{display:inline-flex;align-items:center;gap:8px;background:var(--glass);border:1px solid var(--glass-line);backdrop-filter:blur(10px);border-radius:var(--r-pill);padding:8px 14px 8px 8px;margin-bottom:14px;font:500 .8125rem/1 var(--font-body);color:#fff}
+.chip b{width:22px;height:22px;border-radius:50%;background:var(--c-hivis)}.chip{border-color:rgba(255,79,1,.55)}
+.hero h1{font-size:var(--fs-display);letter-spacing:var(--tr-display);max-width:13ch;margin-bottom:20px}
+.hero .lede{color:rgba(255,255,255,.85);max-width:44ch;margin-bottom:32px}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+/* Statement with inline image pills + scroll word reveal (Padelon/Baseline) */
+.statement [data-words]{font:400 var(--fs-statement)/1.12 var(--font-display);letter-spacing:-.038em;max-width:26ch;margin:0 auto;text-align:center}
+.statement .w{opacity:.18;transition:opacity .3s}.statement .w.on{opacity:1}
+.pillimg{display:inline-block;width:2.1em;height:.92em;border-radius:var(--r-pill);vertical-align:-.1em;background-size:cover;background-position:center;margin:0 .08em}
+.pilltag{display:inline-block;font:500 .42em/1 var(--font-body);letter-spacing:0;background:var(--c-lime);border-radius:var(--r-pill);padding:.55em .9em;vertical-align:.45em}
+/* Numbers row (Padelon "Our impact in numbers" / Baseline scoreboard) */
+.numbers{display:grid;grid-template-columns:1fr;gap:var(--gap);margin-top:var(--s-20)}
+@media(min-width:768px){.numbers{grid-template-columns:repeat(3,1fr)}}
+.num{border-top:1px solid var(--line);padding-top:24px;position:relative}.num::before{content:"";position:absolute;top:-1px;left:0;width:48px;height:3px;background:var(--c-hivis)}
+.num .n{display:flex;font:400 clamp(3.5rem,2.5rem + 3vw,5.5rem)/1 var(--font-display);letter-spacing:-.04em;height:1em;overflow:hidden}
+.num .n span{display:block;transition:transform 1.4s var(--ease)}
+.num h4{margin:16px 0 8px}
+.countcard{margin-top:var(--s-12);border-radius:var(--r-lg);background:var(--bg-dark);color:#fff;padding:clamp(24px,3vw,40px);display:grid;gap:24px;align-items:center}
+@media(min-width:1024px){.countcard{grid-template-columns:1fr auto}}
+.countcard h3{margin:8px 0}
+.tag{display:inline-block;font:500 .75rem/1 var(--font-body);padding:7px 12px;border-radius:var(--r-pill);border:1px solid currentColor}
+.tag.hv{background:var(--c-hivis);border-color:var(--c-hivis);color:#000}.tag.lime{background:var(--c-lime);border-color:var(--c-lime);color:#000}
+.cd{display:flex;gap:8px}.cd div{border-top:3px solid var(--c-hivis)!important;min-width:92px;border-radius:var(--r-md);background:var(--glass);border:1px solid var(--line-dark);padding:14px 10px;text-align:center}
+.cd b{display:block;font:400 2.75rem/1 var(--font-display);letter-spacing:-.04em;color:var(--c-lime)}.cd span{font-size:.75rem;color:var(--on-dark-muted)}
+.cd.closed{display:none}
+/* Lime services block (Padelon): rounded 40px panel, card slider */
+.limeblock{background:var(--c-lime);border-radius:var(--r-xl);margin:0 clamp(8px,1.2vw,16px);padding:var(--section-y) 0}
+.limeblock .kicker::before{background:#000}
+.shead{display:grid;gap:24px;margin-bottom:var(--s-12);align-items:end}
+@media(min-width:1024px){.shead{grid-template-columns:1.3fr 1fr}}
+.shead .lede{justify-self:end}
+.limeblock .lede{color:rgba(0,0,0,.7)}
+.slider{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(280px,1fr);gap:var(--gap);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
+.slider::-webkit-scrollbar{display:none}
+.scard{scroll-snap-align:start;position:relative;border-radius:var(--r-md);overflow:hidden;min-height:400px;color:#fff;display:flex;align-items:flex-end;padding:24px}
+.scard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}.scard:hover img{transform:scale(1.06)}
+.scard::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.75),rgba(0,0,0,0) 60%)}
+.scard>div{position:relative;z-index:1}.scard p{font-size:var(--fs-small);color:rgba(255,255,255,.85);margin-top:8px;max-width:32ch}
+.scard .no{position:absolute;top:20px;left:24px;z-index:1;font:500 .8125rem/1 var(--font-body);background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border-radius:var(--r-pill);padding:7px 12px}
+.sctl{display:flex;gap:8px;margin-top:24px;align-items:center}.sctl button{width:44px;height:44px;border-radius:50%;border:0;background:#000;color:#fff;cursor:pointer;font-size:1rem}
+/* Steps split (Padelon "From booking to your best game") */
+.split{display:grid;gap:48px;align-items:center}@media(min-width:1024px){.split{grid-template-columns:1fr 1fr;gap:80px}}
+.steps{list-style:none;margin:32px 0 0;padding:0}
+.steps li{display:grid;grid-template-columns:56px 1fr;gap:4px 12px;padding:22px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.steps .k{font:500 .875rem/1.8 var(--font-body);color:var(--text-muted)}
+.steps h4{font-size:1.5rem}.steps p{grid-column:2;color:var(--text-muted)}
+.steps li.on h4::after{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--c-hivis);margin-left:10px;vertical-align:middle;box-shadow:0 0 0 1px #000}
+.photo{border-radius:var(--r-lg);overflow:hidden;aspect-ratio:4/5;position:relative}
 .photo img{width:100%;height:100%;object-fit:cover}
-.photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,34,75,.5))}
-.dates{list-style:none;margin:44px 0 0;padding:0;display:grid;gap:12px}
-.dates li{display:grid;grid-template-columns:1fr;gap:10px;padding:22px 24px;border-radius:var(--r);background:rgba(255,255,255,.06);border:1px solid var(--line-d);transition:background .3s}
-.dates li:hover{background:rgba(255,255,255,.11)}
-@media(min-width:600px){.dates li{grid-template-columns:130px 1fr;gap:20px}}
-.dates .d{align-self:start;justify-self:start;font:600 .75rem/1 var(--sans);text-transform:uppercase;letter-spacing:.08em;color:var(--ink);background:var(--lime);padding:8px 10px;border-radius:6px}
-.dates h3{font-size:1.3rem}
-.dates p{color:rgba(255,255,255,.72);font-size:.95rem;margin-top:6px}
-#calendar .fine{color:rgba(255,255,255,.6)}
-
-/* Application (ink) */
-.apply{background:var(--ink);color:#fff}
-.apply .lede{color:rgba(255,255,255,.72)}
-.apply .grid{display:grid;gap:56px}
-@media(min-width:900px){.apply .grid{grid-template-columns:5fr 7fr;gap:96px}}
-form{display:grid;gap:22px 20px;background:#151515;border:1px solid var(--line-d);border-radius:18px;padding:28px}
-@media(min-width:700px){form{grid-template-columns:1fr 1fr;padding:40px}.full{grid-column:1/-1}}
-.f label{display:block;font:500 .82rem/1 var(--sans);color:rgba(255,255,255,.75);margin-bottom:10px}
-.f label span{color:var(--grey-l)}
-.f input,.f select,.f textarea{width:100%;background:#202020;border:1px solid #2e2e2e;border-radius:10px;color:#fff;font:400 1rem var(--sans);padding:14px 14px;transition:border-color .3s;-webkit-appearance:none;appearance:none}
-.f textarea{resize:vertical;min-height:96px;line-height:1.5}
-.f select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='7'%3E%3Cpath d='M.5.5l5 5 5-5' stroke='%23C6F432' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
-.f select option{background:#202020;color:#fff}
-.f input::placeholder,.f textarea::placeholder{color:#777}
-.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--lime)}
-.check{display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:rgba(255,255,255,.75);cursor:pointer}
-.check input{appearance:none;-webkit-appearance:none;flex:none;width:20px;height:20px;border:1px solid #555;border-radius:5px;margin:2px 0 0;display:grid;place-items:center;cursor:pointer}
-.check input:checked{background:var(--lime);border-color:var(--lime)}
-.check input:checked::after{content:"";width:8px;height:4px;border-left:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(-45deg) translate(1px,-1px)}
-.privacy{color:var(--grey-l);font-size:.8rem;line-height:1.6}
-.privacy a{color:#fff}
-.status{font-size:.88rem;color:#FF9C7A;min-height:1.2em}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.thanks{display:none;border-radius:18px;background:#151515;border:1px solid var(--line-d);padding:40px 28px}
-@media(min-width:700px){.thanks{padding:56px}}
-.thanks.show{display:block;animation:fadeup .8s var(--ease) both}
-.thanks h3{font-size:clamp(2.2rem,4.6vw,3.4rem);margin:18px 0 16px}
-.thanks p{color:rgba(255,255,255,.75);max-width:46ch}
-.nom{margin-top:36px;padding-top:24px;border-top:1px solid var(--line-d)}
-.nom .row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:14px}
-.nom input{flex:1 1 240px;background:#202020;border:1px solid #2e2e2e;border-radius:10px;color:#fff;font:400 .95rem var(--sans);padding:14px}
-
-footer{background:var(--ink);color:var(--grey-l);border-top:1px solid var(--line-d);padding:36px 0 44px;font-size:.82rem}
-footer .wrap{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:space-between}
-footer a{color:#fff;text-decoration:none}
-
-/* Motion: snappy fade-up */
-@keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
-.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
-.js .reveal.in{opacity:1;transform:none}
-.js .reveal.d1{transition-delay:.08s}.js .reveal.d2{transition-delay:.16s}.js .reveal.d3{transition-delay:.24s}
-@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1;transform:none;transition:none}.hero .hero-video{display:none}.hero-video-wrap::before{opacity:1}.ticker .t{animation:none}}
-.static .hero .hero-video{display:none}.static .hero-video-wrap::before{opacity:1}
-
-/* League detail (restored copy) */
-#league{background:var(--paper)}
-.lg{display:grid;gap:16px;margin-top:56px}
-@media(min-width:900px){.lg{grid-template-columns:repeat(3,1fr)}}
-.lc{border-radius:var(--r);background:#fff;border:1px solid var(--line);padding:30px;display:grid;gap:12px;align-content:start}
-.lc.hl{background:var(--lime);border-color:var(--lime)}
-.lc .tag{justify-self:start;font:600 .75rem/1 var(--sans);text-transform:uppercase;letter-spacing:.08em;background:var(--ink);color:var(--lime);padding:8px 10px;border-radius:6px}
-.lc p{color:var(--grey)}.lc.hl p{color:var(--ink)}
-.faq{margin-top:16px;display:grid;gap:16px}
-@media(min-width:900px){.faq{grid-template-columns:1fr 1fr}}
-.faq div{border-radius:var(--r);background:var(--navy);color:#fff;padding:28px 30px}
-.faq p{color:rgba(255,255,255,.75);margin-top:8px}
+.photo .float{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-radius:var(--r-md);padding:16px 18px;font-size:var(--fs-small)}
+.photo .float b{display:block;font:500 1.125rem/1.2 var(--font-display);margin-bottom:4px}
+/* Season bento (Padelon "More than a game") */
+.bento{display:grid;gap:var(--gap);grid-template-columns:1fr}
+@media(min-width:768px){.bento{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.bento{grid-template-columns:1.4fr 1fr 1fr}.bento .big{grid-row:span 2}}
+.tile{border-radius:var(--r-md);padding:28px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;background:var(--bg-alt);position:relative;overflow:hidden}
+.tile.img{color:#fff;background:#000}.tile.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.62;transition:transform .9s var(--ease)}.tile.img:hover img{transform:scale(1.05)}
+.tile>*{position:relative}.tile p{color:var(--text-muted);font-size:var(--fs-small)}.tile.img p{color:rgba(255,255,255,.85)}
+.tile.navy{background:var(--bg-dark);color:#fff}.tile.navy p{color:var(--on-dark-muted)}
+.tile .when{font:500 .8125rem/1 var(--font-body);display:flex;justify-content:space-between;gap:12px}
+.footnote{margin-top:24px;font-size:var(--fs-small);color:var(--text-muted);text-align:center}
+/* League cards (Padelon coaches row) */
+.lgrid{display:grid;gap:var(--gap);grid-template-columns:1fr}@media(min-width:1024px){.lgrid{grid-template-columns:1.3fr 1fr 1fr}}
+.lc{border-radius:var(--r-md);background:var(--glass);border:1px solid var(--line-dark);padding:28px;display:flex;flex-direction:column;gap:14px;min-height:340px}
+.lc.feature{background:var(--c-hivis);border-color:var(--c-hivis);color:#000}.lc.feature .vs em{color:#000;text-decoration:underline;text-decoration-color:var(--c-lime);text-decoration-thickness:4px}
+.lc p{color:var(--on-dark-muted)}.lc.feature p{color:rgba(0,0,0,.78)}
+.vs{font:400 clamp(2rem,1.4rem + 2vw,3.25rem)/1 var(--font-display);letter-spacing:-.04em;margin-top:auto}.vs em{font-style:normal;color:var(--c-lime)}
+.lc .link{color:var(--c-lime);font-weight:500;text-decoration:none;margin-top:auto}
+/* FAQ (Padelon split with image card) */
+.faqg{display:grid;gap:48px}@media(min-width:1024px){.faqg{grid-template-columns:1fr 1.25fr;gap:64px}}
+.faqcard{margin-top:32px;border-radius:var(--r-md);overflow:hidden;position:relative;min-height:260px;color:#fff;padding:24px;display:flex;align-items:flex-end;background:#000}
+.faqcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.6}.faqcard div{position:relative;font:400 1.5rem/1.15 var(--font-display)}
+details{background:var(--bg-alt);border-radius:var(--r-md);margin-bottom:8px;padding:0 24px}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;font:500 1.0625rem/1.35 var(--font-body)}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";flex:none;width:32px;height:32px;border-radius:50%;background:#000;color:#fff;display:grid;place-items:center;font-size:1.1rem;transition:transform var(--t-base) var(--ease),background var(--t-fast)}
+details[open] summary::after{transform:rotate(45deg);background:var(--c-lime);color:#000}
+details p{padding:0 0 22px;color:var(--text-muted);max-width:60ch}
+/* Apply */
+.formcard{background:#fff;border-radius:var(--r-lg);padding:clamp(24px,3vw,40px)}
+form{display:grid;gap:16px;grid-template-columns:1fr}@media(min-width:768px){form{grid-template-columns:1fr 1fr}}
+.f{display:flex;flex-direction:column;gap:8px}.full{grid-column:1/-1}
+label{font-size:.875rem;font-weight:500}label span{font-weight:400;color:var(--text-muted)}
+input,select,textarea{font:inherit;height:52px;padding:0 16px;border-radius:var(--r-md);border:1px solid transparent;background:var(--bg-alt);color:var(--text);width:100%}
+textarea{height:auto;min-height:100px;padding:14px 16px;resize:vertical}
+input:focus,select:focus,textarea:focus{border-color:#000;outline:none}
+.check{display:flex;gap:12px;align-items:flex-start;font-weight:400}.check input{width:20px;height:20px;margin-top:2px;accent-color:#000}
+.privacy{font-size:.8125rem;color:var(--text-muted)}.privacy a{color:inherit}
+.status{color:#C5221F;font-size:.9375rem}.hp{position:absolute;left:-9999px}
+.thanks{display:none}.thanks.show{display:block}.thanks h3{margin:10px 0}.thanks .row{display:flex;gap:8px}.thanks .row input{flex:1}
+.thanks .label{font-size:.8125rem;color:var(--text-muted)}
+.perks{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:12px}
+.perks li{display:flex;gap:12px;align-items:center}.perks li::before{content:"✓";width:24px;height:24px;flex:none;border-radius:50%;background:var(--c-lime);display:grid;place-items:center;font-size:.75rem}
+/* Final CTA (Padelon image band) + mega wordmark footer (Padelon/Running/Surfing) */
+.final{position:relative;padding:0;margin:0 clamp(8px,1.2vw,16px);border-radius:var(--r-xl);overflow:hidden;color:#fff;background:#000}
+.final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.final .wrap{position:relative;padding-top:clamp(96px,12vw,180px);padding-bottom:clamp(48px,6vw,80px)}
+.final h2{font-size:var(--fs-display);letter-spacing:var(--tr-display);max-width:14ch;margin-bottom:20px}
+.final .lede{color:rgba(255,255,255,.85);margin-bottom:28px}
+footer{padding:var(--s-20) 0 24px}
+.fg{display:grid;gap:40px;grid-template-columns:1fr 1fr}@media(min-width:1024px){.fg{grid-template-columns:2fr 1fr 1fr 1fr}}
+.fg .about{grid-column:1/-1}@media(min-width:1024px){.fg .about{grid-column:auto}}
+.fg .about p{color:var(--text-muted);max-width:36ch}
+.fg h4{font:500 .875rem/1 var(--font-body);color:var(--text-muted);margin-bottom:14px}
+.fg a{display:block;text-decoration:none;padding:4px 0}.fg a:hover{text-decoration:underline}
+.mega{font:500 var(--fs-mega)/.82 var(--font-display);letter-spacing:-.055em;text-transform:uppercase;margin:var(--s-16) 0 var(--s-6);white-space:nowrap;display:flex;align-items:flex-start;gap:.05em;overflow:hidden}
+.mega{border-bottom:6px solid var(--c-hivis);padding-bottom:.04em}.mega .ball{width:.42em;height:.42em;border-radius:50%;background:var(--c-lime);flex:none;margin-top:.04em;box-shadow:inset 0 0 0 .035em #000}
+.small{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:.8125rem;color:var(--text-muted);border-top:1px solid var(--line);padding-top:20px}
+/* Motion: blur-fade-up reveal (Framer default) */
+.js .rv{opacity:0;transform:translateY(32px);filter:blur(6px);transition:opacity var(--t-reveal) var(--ease),transform var(--t-reveal) var(--ease),filter var(--t-reveal) var(--ease)}
+.js .rv.in{opacity:1;transform:none;filter:none}
+.d1{transition-delay:90ms!important}.d2{transition-delay:180ms!important}.d3{transition-delay:270ms!important}
+@media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;filter:none}.statement .w{opacity:1}html{scroll-behavior:auto}}
+@media(max-width:767px){.hero .media img{object-position:60% center}.hero::after{background:linear-gradient(0deg,rgba(1,23,41,.88) 0%,rgba(1,23,41,.55) 45%,rgba(1,23,41,.25) 100%)}}
+@media(max-width:480px){.nav{top:50px}.nav.scrolled{top:0}.nav .btn{height:40px;font-size:.8125rem;padding-left:14px}.nav .btn i{width:30px;height:30px}.mark{font-size:1.05rem}}
 </style>
 <script>document.documentElement.classList.add(/[?&]static\b/.test(location.search)?"static":"js")</script>
-</head>
-<body>
-
-<div class="bar">Founding 50 now open. <b>First game Thursday 26 November.</b></div>
-<header class="nav" id="nav">
-  <div class="wrap">
-    <a class="mark" href="#top" aria-label="FM Padel London">FM Padel London<i></i></a>
-    <nav class="navlinks"><a href="#membership">Founding 50</a><a href="#why">Why join</a><a href="#calendar">The season</a><a href="#league">The league</a></nav>
-    <a class="req" href="#apply">Request to join</a>
-  </div>
-</header>
-
+</head><body>
+<div class="bar">Founding 50 now open. First game Thursday 26 November, 6pm.</div>
+<header class="nav" id="nav"><div class="wrap in">
+  <a class="mark" href="#top">FM Padel London</a>
+  <nav class="links" aria-label="Main"><a href="#why">Why join</a><a href="#membership">Founding 50</a><a href="#season">The season</a><a href="#league">The league</a><a href="#faq">FAQ</a></nav>
+  <a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
+</div></header>
 <main id="top">
-
-<!-- HERO. Video loop; poster image shows for reduced-motion users. Replace with real member footage (with consent), monochrome. -->
 <section class="hero">
-  <!-- HERO VIDEO: 20s black-and-white loop (padel, construction, FM), AI-generated footage, no real people or brands. -->
-  <div class="hero-video-wrap" aria-hidden="true">
-    <video class="hero-video" autoplay muted loop playsinline preload="metadata" poster="assets/hero-loop-poster.jpg" disablepictureinpicture>
-      <source src="assets/hero-loop-720.mp4" type="video/mp4" media="(max-width: 900px)">
-      <source src="assets/hero-loop-1080.webm" type="video/webm">
-      <source src="assets/hero-loop-1080.mp4" type="video/mp4">
-    </video>
-  </div>
+  <div class="media"><picture><source media="(max-width: 767px)" srcset="hero-v4c-mobile.webp"><img src="hero-v4c-1920.webp" alt="Four amateur players mid-rally in a padel doubles match on an outdoor court" fetchpriority="high"></picture></div>
   <div class="wrap">
-    <p class="label reveal">Construction &amp; FM padel club &middot; London</p>
-    <h1 class="reveal d1">The industry,<br><em>on court.</em></h1>
-    <div class="foot reveal d2">
-      <p class="lede">A private padel community for the people who build, run and look after London's buildings. Membership by application.</p>
-      <a class="cta" href="#apply">Apply for membership</a>
-    </div>
-  </div>
-</section>
-
-<!-- MEMBERSHIP -->
-<div class="ticker" aria-hidden="true"><div class="t"><span>Construction</span><span>Facilities management</span><span>Play padel</span><span>Have fun</span><span>No pressure</span><span>Make connections</span><span>London</span><span>Construction</span><span>Facilities management</span><span>Play padel</span><span>Have fun</span><span>No pressure</span><span>Make connections</span><span>London</span></div></div>
-<section id="membership">
-  <div class="wrap">
-    <div class="intro">
-      <div class="reveal">
-        <p class="label">The Founding 50</p>
-        <h2 style="margin-top:28px">Founding<br><em>Members.</em></h2>
-      </div>
-      <div class="reveal d1">
-        <p class="lede">The first 50 approved members join as Founding Members. It's our thank-you for being here from the start, and it's only offered once.</p>
-        <div class="count" id="countdown" aria-live="polite">
-          <p class="count-label" id="countLabel">Founding membership closes when the first season opens</p>
-          <div class="count-row" id="countRow">
-            <div><span class="cn" id="cd-d">&ndash;</span><span class="cu">Days</span></div>
-            <div><span class="cn" id="cd-h">&ndash;</span><span class="cu">Hours</span></div>
-            <div><span class="cn" id="cd-m">&ndash;</span><span class="cu">Minutes</span></div>
-          </div>
-          <p class="count-note" id="countNote">First game: Thursday 26 November, 6pm. Or sooner, once all 50 places are taken.</p>
-        </div>
-      </div>
-    </div>
-    <div class="terms terms3">
-      <div class="term reveal">
-        <span class="n">4</span>
-        <h3>Complimentary games</h3>
-        <p>Four games on us, played at our community sessions within six months of joining.</p>
-      </div>
-      <div class="term reveal d1">
-        <span class="n">5</span>
-        <h3>Nominations rewarded</h3>
-        <p>Nominate a colleague and their first game is complimentary. You earn one more complimentary game for every approved nominee, up to five.</p>
-      </div>
-      <div class="term reveal d2">
-        <span class="n">50</span>
-        <h3>Founding status</h3>
-        <p>Only 50 places, and only before the first season opens. After that, founding membership closes for good.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY JOIN -->
-<section id="why" style="padding-top:0">
-  <div class="wrap">
-    <div class="intro">
-      <div class="reveal">
-        <p class="label">Why join</p>
-        <h2 style="margin-top:28px">More than<br><em>a game.</em></h2>
-      </div>
-      <p class="lede reveal d1">For people across construction and FM, including cleaning, security, soft FM, property and workplace. Site or office, every level of player.</p>
-    </div>
-    <div class="why">
-      <div class="w reveal"><span class="wn">I</span><h3>The right room</h3><p>Meet clients, contractors and peers from across construction and FM, away from the desk and the tender table.</p></div>
-      <div class="w reveal d1"><span class="wn">II</span><h3>No joining fee</h3><p>Membership is free. You only pay for the games you play, and your first four are on us.</p></div>
-      <div class="w reveal d2"><span class="wn">III</span><h3>By application</h3><p>Every member is approved personally, or nominated by someone already in the club.</p></div>
-      <div class="w reveal d3"><span class="wn">IV</span><h3>The game itself</h3><p>Fast, social and easy to pick up. Good for fitness, good for teams, and good fun on a Thursday night.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SEASON. IMAGE SLOT: court-mono-*.jpg is a CC0 placeholder. -->
-<section id="calendar" style="padding-top:0">
-  <div class="wrap cal">
-    <div class="photo reveal"><img src="assets/court-mono-1000.jpg" srcset="assets/court-mono-1000.jpg 1000w, assets/court-mono-2000.jpg 2000w" sizes="(min-width:900px) 580px, 100vw" alt="An indoor padel court in the evening, in black and white" loading="lazy"></div>
+    <div class="top rv"><span class="chip"><b></b>Founding 50 now open</span><p>Construction &amp; FM padel community · London. Anyone can play. No pressure.</p></div>
     <div>
-      <p class="label reveal">The season</p>
-      <h2 class="reveal d1" style="margin-top:28px">A year<br><em>on court.</em></h2>
-      <ul class="dates">
-        <li class="reveal"><span class="d">Compete</span><div><h3>The corporate league</h3><p>Company teams from across construction and FM, playing for the title.</p></div></li>
-        <li class="reveal d1"><span class="d">Give back</span><div><h3>Charity cups</h3><p>Starting with the Handover Cup: Construction versus FM, in aid of the Lighthouse Construction Industry Charity.</p></div></li>
-        <li class="reveal d2"><span class="d">Connect</span><div><h3>Networking evenings</h3><p>Relaxed games and conversation, with a First Serve slot for anyone new to padel.</p></div></li>
-        <li class="reveal d3"><span class="d">Play anytime</span><div><h3>Ad-hoc matches</h3><p>Find a game whenever suits you, through our members' ladder on Rankedin.</p></div></li>
-      </ul>
-      <p class="fine reveal">Starter games from November &middot; Handover Cup, January &middot; League from February. Played in East London, at Padium Canary Wharf and Stratford Padel Club.</p>
+      <h1 class="rv d1">The industry, on court.</h1>
+      <p class="lede rv d2">An invite-only padel community for the people who build, run and look after London's buildings. Site or office, every level of player. No joining fee.</p>
+      <div class="ctas rv d3"><a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><a class="btn btn-white" href="#season">See the season <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
     </div>
   </div>
 </section>
 
-<!-- APPLICATION -->
+<section class="hidden-until-real" aria-label="Members from"></section>
 
-<section id="league">
-  <div class="wrap">
-    <div class="intro">
-      <div class="reveal"><p class="label">League Season 1</p><h2>The corporate<br><em>league.</em></h2></div>
-      <p class="lede reveal d1">Company teams from across construction and FM, playing each other over a season. Captains wanted.</p>
-    </div>
-    <div class="lg">
-      <div class="lc reveal"><span class="tag">Company teams</span><h3>Corporate league</h3><p>Company teams from across construction and FM, playing each other over a season. Captains wanted.</p></div>
-      <div class="lc hl reveal d1"><span class="tag">28 Jan 2027</span><h3>The Handover Cup</h3><p>A charity night on Thursday 28 January 2027: Construction vs FM.</p></div>
-      <div class="lc reveal d2"><span class="tag">Any level</span><h3>First Serve</h3><p>Never held a racket? Our First Serve slot is built for you. Already handy? Join the league.</p></div>
-    </div>
-    <div class="faq">
-      <div class="reveal"><h3>I've never played. Is this for me?</h3><p>Yes. Our First Serve slot is designed for complete beginners, and every session is social first.</p></div>
-      <div class="reveal d1"><h3>Can my company enter a team?</h3><p>Yes. The corporate league is for company teams. Apply, mention it in your role, and we'll be in touch about captaining.</p></div>
-    </div>
+<section class="statement" id="intro"><div class="wrap">
+  <p data-words>For people across construction <span class="pillimg" style="background-image:url(v4d-drinks.webp)"></span> and FM, including cleaning, security, soft FM, property and workplace. Meet clients, contractors <span class="pillimg" style="background-image:url(v4d-network.webp)"></span> and peers away from the desk and the tender table. <span class="pilltag" style="background:var(--c-hivis)">Every level</span></p>
+
+  <div class="numbers" id="membership">
+    <div class="num rv"><div class="n" data-count="4">4</div><h4>Complimentary games</h4><p class="muted">Four games on us, played at our community sessions within six months of joining.</p></div>
+    <div class="num rv d1"><div class="n" data-count="5">5</div><h4>Nominations rewarded</h4><p class="muted">Nominate a colleague and their first game is complimentary. You earn one more complimentary game for every approved nominee, up to five.</p></div>
+    <div class="num rv d2"><div class="n" data-count="50">50</div><h4>Founding status</h4><p class="muted">The first 50 approved members join as Founding Members. Only offered once, before the first season opens.</p></div>
   </div>
-</section>
-<section class="apply" id="apply">
-  <div class="wrap grid">
-    <div class="reveal">
-      <p class="label">Request to join</p>
-      <h2 style="margin-top:28px">Apply for<br><em>membership.</em></h2>
-      <p class="lede" style="margin-top:32px">Every application is reviewed personally.</p>
-    </div>
-    <div>
-    <!--
-      ===================================================================
-      FORM ENDPOINT: SWAP ONE VALUE
-      Set FORM_ENDPOINT (and FORM_MODE) in the <script> at the bottom.
-      The form POSTs FormData, so it works with:
-      1. Google Sheet + Apps Script (free; data lands in your own Sheet).
-         See apps-script-example.gs. Paste the /exec URL, FORM_MODE="no-cors".
-      2. Formspree (free tier 50/month): "https://formspree.io/f/XXXX", FORM_MODE="json".
-      3. Tally / Google Forms: simplest no-code, but you'd link/embed their form.
-      4. Netlify Forms (if hosted on Netlify): add data-netlify="true" to <form>,
-         FORM_ENDPOINT="/".
-      While FORM_ENDPOINT is empty the form runs in demo mode (nothing sent).
-      ===================================================================
-    -->
-    <form id="apply-form" class="reveal d1" novalidate>
+  <div class="countcard rv">
+    <div><span class="tag hv" id="countLabel">Founding membership closes when the first season opens</span><h3>First game: Thursday 26 November, 6pm.</h3><p class="muted" style="color:var(--on-dark-muted)" id="countNote">Or sooner, once all 50 places are taken.</p></div>
+    <div class="cd" id="countdown"><div><b id="cd-d">–</b><span>Days</span></div><div><b id="cd-h">–</b><span>Hours</span></div><div><b id="cd-m">–</b><span>Minutes</span></div></div>
+  </div>
+</div></section>
+
+<section class="limeblock" id="why"><div class="wrap">
+  <div class="shead"><div><p class="kicker">Why join</p><h2 class="rv">More than a game.</h2></div><p class="lede rv d1">Fast, social and easy to pick up. Good for fitness, good for teams, and good fun on a Thursday night.</p></div>
+  <div class="slider" id="slider">
+    <article class="scard"><img src="v4d-network.webp" alt="Two players shaking hands courtside" loading="lazy"><span class="no">01 /4</span><div><h4>The right room</h4><p>Meet clients, contractors and peers from across construction and FM, away from the desk and the tender table.</p></div></article>
+    <article class="scard"><img src="v4d-drinks.webp" alt="Players chatting over drinks after a game" loading="lazy"><span class="no">02 /4</span><div><h4>No joining fee</h4><p>Membership is free. You only pay for the games you play, and your first four are on us.</p></div></article>
+    <article class="scard"><img src="v4d-beginners.webp" alt="Beginners laughing while learning to hold a racket" loading="lazy"><span class="no">03 /4</span><div><h4>By invitation</h4><p>Every member is approved personally, or nominated by someone already in the club.</p></div></article>
+    <article class="scard"><img src="v4d-rally.webp" alt="A player lunging for a volley during a doubles rally" loading="lazy"><span class="no">04 /4</span><div><h4>The game itself</h4><p>Fast, social and easy to pick up. Good for fitness, good for teams, and good fun on a Thursday night.</p></div></article>
+  </div>
+  <div class="sctl"><button type="button" data-s="-1" aria-label="Previous">←</button><button type="button" data-s="1" aria-label="Next">→</button></div>
+</div></section>
+
+<section id="how"><div class="wrap split">
+  <div><p class="kicker">How it works</p><h2 class="rv">Request, get invited, play.</h2>
+    <ol class="steps">
+      <li class="rv"><span class="k">01</span><h4>Request</h4><p>Tell us a little about you, your company, your role and your playing level. It takes under a minute.</p></li>
+      <li class="rv d1 on"><span class="k">02</span><h4>Get invited</h4><p>Every request is reviewed personally. Once approved, you get your invite, session dates and your nomination link.</p></li>
+      <li class="rv d2"><span class="k">03</span><h4>Play</h4><p>Turn up, meet the industry and use your complimentary games. Never played? Start with First Serve.</p></li>
+    </ol>
+    <p style="margin-top:32px" class="rv"><a class="btn btn-black" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></p>
+  </div>
+  <div class="photo rv d1"><img src="v4d-beginners.webp" alt="An experienced player showing beginners how to hold a padel racket" loading="lazy"><div class="float"><b>No joining fee.</b>Invite-only. Every level welcome.</div></div>
+</div></section>
+
+<section id="season" class="alt"><div class="wrap">
+  <div class="shead"><div><p class="kicker">The season</p><h2 class="rv">A year on court.</h2></div><p class="lede rv d1">Leagues, charity cups, networking evenings and ad-hoc matches, all in one community.</p></div>
+  <div class="bento">
+    <article class="tile img big rv"><img src="v4d-indoor.webp" alt="A doubles match on an indoor court in a brick warehouse" loading="lazy"><div class="when"><span>From February</span><span class="tag">Compete</span></div><div><h3>The corporate league</h3><p>Company teams from across construction and FM, playing for the title.</p></div></article>
+    <article class="tile navy rv d1"><div class="when"><span>January</span><span class="tag hv">Give back</span></div><div><h4>Charity cups</h4><p>Starting with the Handover Cup: Construction versus FM, in aid of the Lighthouse Construction Industry Charity.</p></div></article>
+    <article class="tile rv d2"><div class="when"><span>From November</span><span class="tag">Connect</span></div><div><h4>Networking evenings</h4><p>Relaxed games and conversation, with a First Serve slot for anyone new to padel.</p></div></article>
+    <article class="tile rv d1"><div class="when"><span>Anytime</span><span class="tag">Play</span></div><div><h4>Ad-hoc matches</h4><p>Find a game whenever suits you, through our members' ladder on Rankedin.</p></div></article>
+    <article class="tile img rv d2"><img src="v4d-rooftop.webp" alt="A rooftop padel court with the London skyline" loading="lazy"><div class="when"><span>East London</span></div><div><h4>Where we play</h4><p>Padium Canary Wharf and Stratford Padel Club.</p></div></article>
+  </div>
+  <p class="footnote">Starter games from November · Handover Cup, January · League from February.</p>
+</div></section>
+
+<section class="hidden-until-real" aria-label="Testimonial"></section>
+
+<section id="league" class="dark"><div class="wrap">
+  <div class="shead"><div><p class="kicker">League Season 1</p><h2 class="rv">The corporate league.</h2></div><p class="lede rv d1">Company teams playing each other over a season, a charity cup to open the year, and a way in for complete beginners.</p></div>
+  <div class="lgrid">
+    <article class="lc feature rv"><span class="tag" style="align-self:flex-start;background:#000;border-color:#000;color:#fff">Thu 28 Jan 2027</span><h3>The Handover Cup</h3><p>A charity night in aid of the Lighthouse Construction Industry Charity.</p><div class="vs">Construction <em>vs</em> FM</div></article>
+    <article class="lc rv d1"><span class="tag" style="align-self:flex-start">Company teams</span><h3>Corporate league</h3><p>Company teams from across construction and FM, playing each other over a season. Captains wanted.</p><a class="link" href="#apply">Enter a team →</a></article>
+    <article class="lc rv d2"><span class="tag" style="align-self:flex-start">Any level</span><h3>First Serve</h3><p>Never held a racket? Our First Serve slot is built for you. Already handy? Join the league.</p><a class="link" href="#apply">Request an invite →</a></article>
+  </div>
+</div></section>
+
+<section id="faq"><div class="wrap faqg">
+  <div><p class="kicker">FAQ</p><h2 class="rv">Got questions?</h2><p class="lede" style="margin-top:16px">Anything else, email <a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a>.</p>
+    <div class="faqcard rv"><img src="v4d-drinks.webp" style="object-position:center 30%" alt="" loading="lazy"><div>More than a game.<br>The industry, on court.</div></div></div>
+  <div class="rv d1">
+    <details open><summary>I've never played. Is this for me?</summary><p>Yes. Our First Serve slot is designed for complete beginners, and every session is social first.</p></details>
+    <details><summary>Can my company enter a team?</summary><p>Yes. The corporate league is for company teams. Request an invite, mention it in your role, and we'll be in touch about captaining.</p></details>
+    <details><summary>Is there a joining fee?</summary><p>No. Membership is free. You only pay for the games you play, and Founding Members get their first four on us.</p></details>
+    <details><summary>Who can join?</summary><p>People across construction and FM, including cleaning, security, soft FM, property and workplace. Site or office, every level of player. Every member is approved personally, or nominated by someone already in the club.</p></details>
+    <details><summary>Where do we play?</summary><p>In East London, at Padium Canary Wharf and Stratford Padel Club.</p></details>
+  </div>
+</div></section>
+
+<section id="apply" class="alt"><div class="wrap split" style="align-items:start">
+  <div><p class="kicker">Request an invite</p><h2 class="rv">Claim your spot.</h2><p class="lede rv d1" style="margin-top:16px">Every request is reviewed personally. We'll be in touch with session dates and how to use your complimentary games.</p>
+    <ul class="perks rv d2"><li>No joining fee</li><li>Four complimentary games for the Founding 50</li><li>First Serve slot for complete beginners</li></ul></div>
+  <div class="formcard rv d1"><form id="apply-form" novalidate>
       <div class="f"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
       <div class="f"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
       <div class="f"><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization" required></div>
@@ -384,7 +321,7 @@ footer a{color:#fff;text-decoration:none}
       <input type="hidden" name="source" id="source">
       <div class="full"><label class="check"><input type="checkbox" id="consent" name="marketing_consent" value="yes"><span>Send me occasional news about sessions, the league and events. Unsubscribe any time.</span></label></div>
       <p class="privacy full">We use your details only to review your application and run FM Padel London membership, complimentary games and nominations. We never sell your data, and only send news if you tick the box. Questions or deletion: <a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a>.</p>
-      <div class="full"><button class="cta solid" type="submit">Submit application</button></div>
+      <div class="full"><button class="btn btn-primary" type="submit">Submit application</button></div>
       <p class="status full" id="status" role="status" aria-live="polite"></p>
     </form>
 
@@ -396,26 +333,30 @@ footer a{color:#fff;text-decoration:none}
         <p class="label muted">Your nomination link</p>
         <div class="row">
           <input type="text" id="mylink" readonly aria-label="Your nomination link">
-          <button class="cta" type="button" id="copy">Copy</button>
+          <button class="btn btn-navy" type="button" id="copy">Copy</button>
         </div>
         <p class="privacy" style="margin-top:16px">Nominate a colleague: their first game is complimentary, and you earn one complimentary game per approved nominee, up to five.</p>
-        <p style="margin-top:24px"><a class="req" href="#" data-wa style="font:400 .7rem var(--sans);letter-spacing:.22em;text-transform:uppercase;text-decoration:none;border-bottom:1px solid var(--champagne);padding-bottom:4px">Members' WhatsApp</a></p>
+        <p style="margin-top:20px"><a class="link" href="#" data-wa>Members' WhatsApp</a></p>
       </div>
     </div>
-    </div>
-  </div>
-</section>
+    </div></div>
+</div></section>
 
+<section class="final"><img src="v4d-charity.webp" alt="" loading="lazy"><div class="wrap">
+  <h2 class="rv">Start playing this November.</h2><p class="lede rv d1">Founding 50 now open. First game Thursday 26 November, 6pm.</p>
+  <div class="ctas rv d2"><a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
+</div></section>
 </main>
-
-<footer>
-  <div class="wrap">
-    <span>&copy; <span id="yr">2026</span> FM Padel London</span>
-    <a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a>
-    <span>Placeholder photography: Samson Ssemakadde, CC0, Wikimedia Commons</span>
+<footer><div class="wrap">
+  <div class="fg">
+    <div class="about"><p>An invite-only padel community for London's construction and facilities management professionals.</p></div>
+    <div><h4>Club</h4><a href="#why">Why join</a><a href="#membership">Founding 50</a><a href="#how">How it works</a><a href="#faq">FAQ</a></div>
+    <div><h4>League</h4><a href="#league">Corporate league</a><a href="#league">Handover Cup</a><a href="#league">First Serve</a><a href="#season">The season</a></div>
+    <div><h4>Contact</h4><a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a><a href="https://www.instagram.com/fmpadellondon/" target="_blank" rel="noopener">Instagram</a></div>
   </div>
-</footer>
-
+  <div class="mega" aria-hidden="true">FM Padel<span class="ball"></span></div>
+  <div class="small"><span>&copy; <span id="yr">2026</span> FM Padel London</span><span>Illustrative imagery</span></div>
+</div></footer>
 <script>
 /* ===================== CONFIG: EDIT THESE ===================== */
 var FORM_ENDPOINT = "";     // e.g. "https://script.google.com/macros/s/XXXX/exec" or "https://formspree.io/f/XXXX"
@@ -431,7 +372,7 @@ var REPLY_TIME    = "shortly"; // e.g. "within 48 hours" once Sam sets a review 
   if (ref) document.getElementById("ref").value = ref.replace(/[^\w-]/g,"").slice(0,40);
   document.getElementById("source").value = params.get("utm_source") || document.referrer || "direct";
   document.getElementById("yr").textContent = new Date().getFullYear();
-  document.querySelector("#thanks p:not(.label)").textContent = "We review every request personally and will be in touch " + REPLY_TIME + ".";
+  document.querySelector("#thanks p:not(.eyebrow)").textContent = "We review every request personally and will be in touch " + REPLY_TIME + ".";
 
   // Nav background after scroll
   var nav = document.getElementById("nav");
@@ -439,7 +380,7 @@ var REPLY_TIME    = "shortly"; // e.g. "within 48 hours" once Sam sets a review 
   window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
 
   // Slow fade-up on scroll
-  var els = document.querySelectorAll(".reveal");
+  var els = document.querySelectorAll(".rv");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
@@ -517,5 +458,20 @@ function t(){var ms=T-Date.now();if(ms<=0){el.classList.add("closed");document.g
 var m=Math.floor(ms/6e4);document.getElementById("cd-d").textContent=Math.floor(m/1440);document.getElementById("cd-h").textContent=p(Math.floor(m/60)%24);document.getElementById("cd-m").textContent=p(m%60);return true}
 if(t())setInterval(t,15000)})();
 </script>
-</body>
-</html>
+
+<script>
+(function(){
+addEventListener('load',function(){document.documentElement.classList.add('loaded')});
+var st=document.documentElement.classList.contains('static');
+// word-by-word scroll reveal
+var p=document.querySelector('[data-words]');
+if(p&&!st){[].slice.call(p.childNodes).forEach(function(n){if(n.nodeType===3){var f=document.createDocumentFragment();n.textContent.split(/(\s+)/).forEach(function(w){if(!w.trim())f.appendChild(document.createTextNode(w));else{var s=document.createElement('span');s.className='w';s.textContent=w;f.appendChild(s)}});p.replaceChild(f,n)}else n.classList&&n.classList.add('w')});
+var ws=p.querySelectorAll('.w');var upd=function(){var r=p.getBoundingClientRect(),vh=innerHeight;var k=Math.min(1,Math.max(0,(vh*.85-r.top)/(r.height+vh*.35)));var c=Math.round(k*ws.length);ws.forEach(function(w,i){w.classList.toggle('on',i<c)})};addEventListener('scroll',upd,{passive:true});upd();}
+// odometer counters
+document.querySelectorAll('[data-count]').forEach(function(el){if(st)return;var v=el.dataset.count;el.innerHTML=v.split('').map(function(d){var s='';for(var i=0;i<=+d;i++)s+='<span style="height:1em">'+i+'</span>';return '<span class="col" style="display:block;height:1em;overflow:hidden"><span class="strip" style="display:block">'+s+'</span></span>'}).join('');
+var io=new IntersectionObserver(function(e){if(e[0].isIntersecting){el.querySelectorAll('.strip').forEach(function(s){var n=s.children.length-1;s.style.transition='transform 1.4s cubic-bezier(.22,1,.36,1)';s.style.transform='translateY(-'+n+'em)'});io.disconnect()}});io.observe(el)});
+// slider
+var sl=document.getElementById('slider');document.querySelectorAll('[data-s]').forEach(function(b){b.onclick=function(){sl.scrollBy({left:+b.dataset.s*(sl.firstElementChild.offsetWidth+16),behavior:'smooth'})}});
+})();
+</script>
+</body></html>

@@ -169,6 +169,17 @@ input:focus,select:focus,textarea:focus{border-color:#000;outline:none}
 .thanks .label{font-size:.8125rem;color:var(--text-muted)}
 .perks{list-style:none;padding:0;margin:32px 0 0;display:grid;gap:12px}
 .perks li{display:flex;gap:12px;align-items:center}.perks li::before{content:"✓";width:24px;height:24px;flex:none;border-radius:50%;background:var(--c-lime);display:grid;place-items:center;font-size:.75rem}
+.play{grid-column:1/-1;border:0;margin:0;padding:0;min-width:0}.play legend{font-size:.875rem;font-weight:500;margin-bottom:8px;padding:0}
+.opts{display:grid;gap:10px;grid-template-columns:1fr}@media(min-width:560px){.opts{grid-template-columns:1fr 1fr}}
+.opt{position:relative;display:flex;gap:12px;align-items:flex-start;padding:16px 18px;border-radius:var(--r-md);background:var(--bg-alt);border:2px solid transparent;cursor:pointer;transition:border-color var(--t-fast),background var(--t-fast)}
+.opt input{position:absolute;opacity:0;width:1px;height:1px}
+.opt .dot{flex:none;width:22px;height:22px;margin-top:1px;border-radius:50%;border:2px solid #000;background:#fff;transition:background var(--t-fast)}
+.opt b{display:block;font-weight:600;font-size:.9375rem}.opt small{display:block;font-size:.8125rem;color:var(--text-muted);margin-top:2px;font-weight:400}
+.opt:has(input:checked){border-color:#000;background:#fff}.opt:has(input:checked) .dot{background:var(--c-lime)}.opt.o2:has(input:checked) .dot{background:var(--c-hivis)}
+.opt:has(input:focus-visible){outline:2px solid #000;outline-offset:2px}
+.partner{grid-column:1/-1;display:none;gap:16px;grid-template-columns:1fr;padding:18px;border-radius:var(--r-md);border:1px dashed rgba(0,0,0,.25)}.partner.show{display:grid}@media(min-width:768px){.partner{grid-template-columns:1fr 1fr}}
+.partner .note{margin:0;font-size:.875rem;color:var(--text-muted)}.partner .note b{color:var(--text)}
+.partner.solo .pf{opacity:.45}
 /* Final CTA (Padelon image band) + mega wordmark footer (Padelon/Running/Surfing) */
 .final{position:relative;padding:0;margin:0 clamp(8px,1.2vw,16px);border-radius:var(--r-xl);overflow:hidden;color:#fff;background:#000}
 .final img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
@@ -315,6 +326,18 @@ footer{padding:var(--s-20) 0 24px}
   <div><p class="kicker">Request an invite</p><h2 class="rv">Request your invite.</h2><p class="lede rv d1" style="margin-top:16px">We review every one personally, and we'll be in touch with session dates and how to use your complimentary games.</p>
     <ul class="perks rv d2"><li><svg class="bi" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#C6F432" stroke="#000" stroke-width="2"/></svg>No joining fee</li><li><svg class="bi" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#FF4F01" stroke="#000" stroke-width="2"/></svg>Four complimentary games for the Founding 50</li><li><svg class="bi" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#011729" stroke="#000" stroke-width="2"/></svg>First Serve slot for complete beginners</li></ul></div>
   <div class="formcard rv d1"><form id="apply-form" novalidate>
+      <fieldset class="play"><legend>How would you like to play?</legend>
+        <div class="opts">
+          <label class="opt"><input type="radio" name="membership_type" value="league_pair" required><span class="dot"></span><span><b>Corporate league, as a pair</b><small>League teams are two players.</small></span></label>
+          <label class="opt o2"><input type="radio" name="membership_type" value="community" required><span class="dot"></span><span><b>General community member</b><small>Socials, networking and games when it suits.</small></span></label>
+        </div>
+      </fieldset>
+      <div class="partner" id="partner" aria-live="polite">
+        <p class="note full"><b>The league is played in pairs.</b> Bring the colleague, client or contractor you'd trust at the net.</p>
+        <div class="f pf"><label for="pname">Partner's name</label><input id="pname" name="partner_name" type="text" autocomplete="off"></div>
+        <div class="f pf"><label for="pemail">Partner's work email</label><input id="pemail" name="partner_email" type="email" autocomplete="off"></div>
+        <div class="full"><label class="check"><input type="checkbox" id="nopartner" name="pair_me_up" value="yes"><span>No partner yet — pair me up. <span>We'll do our best to find you one.</span></span></label></div>
+      </div>
       <div class="f"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
       <div class="f"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
       <div class="f"><label for="company">Company</label><input id="company" name="company" type="text" autocomplete="organization" required></div>
@@ -383,8 +406,8 @@ footer{padding:var(--s-20) 0 24px}
 </div></footer>
 <script>
 /* ===================== CONFIG: EDIT THESE ===================== */
-var FORM_ENDPOINT = "";     // e.g. "https://script.google.com/macros/s/XXXX/exec" or "https://formspree.io/f/XXXX"
-var FORM_MODE     = "json"; // "json" for Formspree, "no-cors" for Google Apps Script
+var FORM_ENDPOINT = "https://script.google.com/macros/s/AKfycbyoYpNZCDgZucRdSAL6y1yky7QDpv6EzOtIeWMOdrSwOUbLoGBcZoPegKk4b3hFwVeHmA/exec"; // paste the Google Apps Script /exec URL here
+var FORM_MODE     = "no-cors"; // Google Apps Script: opaque response treated as success
 var WHATSAPP_URL  = "";     // e.g. "https://chat.whatsapp.com/XXXXXXXX" (members' group, share after approval)
 var SITE_URL      = "https://fmpadellondon.com/";
 var REPLY_TIME    = "shortly"; // e.g. "within 48 hours" once Sam sets a review time
@@ -424,6 +447,9 @@ var REPLY_TIME    = "shortly"; // e.g. "within 48 hours" once Sam sets a review 
   }
 
   var form = document.getElementById("apply-form"), status = document.getElementById("status");
+  var pBox=document.getElementById("partner"),pN=document.getElementById("pname"),pE=document.getElementById("pemail"),noP=document.getElementById("nopartner");
+  function syncPartner(){var lg=form.querySelector('input[name=membership_type]:checked');var on=!!lg&&lg.value==="league_pair";pBox.classList.toggle("show",on);var req=on&&!noP.checked;pN.required=req;pE.required=req;pBox.classList.toggle("solo",on&&noP.checked);}
+  form.addEventListener("change",function(e){if(e.target.name==="membership_type"||e.target===noP)syncPartner();});syncPartner();
   form.addEventListener("submit", function(e){
     e.preventDefault();
     status.textContent = "";
@@ -431,6 +457,7 @@ var REPLY_TIME    = "shortly"; // e.g. "within 48 hours" once Sam sets a review 
     if (li.value && !/^https?:\/\//i.test(li.value)) li.value = "https://" + li.value.trim();
     if (!form.checkValidity()) {
       var bad = form.querySelector(":invalid");
+      if (bad.type === "radio") { status.textContent = "Please choose how you'd like to play."; bad.focus(); return; }
       status.textContent = "Please complete: " + (bad.labels && bad.labels[0] ? bad.labels[0].childNodes[0].textContent.trim() : "all required fields") + ".";
       bad.focus(); return;
     }
@@ -447,10 +474,10 @@ var REPLY_TIME    = "shortly"; // e.g. "within 48 hours" once Sam sets a review 
       document.getElementById("mylink").value = SITE_URL + "?ref=" + myCode;
       var t = document.getElementById("thanks"); t.classList.add("show"); t.focus();
     };
-    if (!FORM_ENDPOINT) { console.warn("Demo mode: FORM_ENDPOINT not set", Object.fromEntries(data)); return done(); }
+    if (!FORM_ENDPOINT || /^__/.test(FORM_ENDPOINT)) { console.warn("Demo mode: FORM_ENDPOINT not set", Object.fromEntries(data)); return done(); }
 
     var opts = FORM_MODE === "no-cors"
-      ? { method:"POST", mode:"no-cors", body:data }
+      ? { method:"POST", mode:"no-cors", headers:{ "Content-Type":"application/x-www-form-urlencoded" }, body:new URLSearchParams(data).toString() }
       : { method:"POST", body:data, headers:{ "Accept":"application/json" } };
     fetch(FORM_ENDPOINT, opts).then(function(r){
       if (FORM_MODE === "no-cors" || r.ok) return done();

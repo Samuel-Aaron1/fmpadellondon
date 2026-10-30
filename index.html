@@ -202,10 +202,22 @@ footer{padding:var(--s-20) 0 24px}
 .steps .k{display:flex;align-items:flex-start;gap:8px}
 .final .ctas{align-items:center;gap:14px}
 .balls{display:inline-flex;gap:6px;align-items:center}
+/* v4h: calmer mobile hero */
+.bar .mb,.hero .mshow,.hero .meyebrow{display:none}
+@media(max-width:767px){
+.bar .dk{display:none}.bar .mb,.hero .mshow{display:inline}
+.nav .btn{opacity:0;pointer-events:none;transition:opacity .3s ease}.nav.scrolled .btn{opacity:1;pointer-events:auto}
+.hero .top,.hero .chip,.hero .hero-2nd,.hero .mhide{display:none}
+.hero .wrap{justify-content:flex-end;padding-bottom:56px}
+.hero h1{font-size:clamp(3rem,13vw,3.6rem);line-height:.98;margin-bottom:20px}
+.hero .lede{font-size:1.0625rem;line-height:1.5;max-width:30ch;margin-bottom:36px}
+.hero .ctas .btn{width:100%;justify-content:space-between}
+.hero .meyebrow{display:flex;align-items:center;gap:8px;margin:0 0 14px;font:600 .6875rem/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);white-space:nowrap}
+}
 </style>
 <script>document.documentElement.classList.add(/[?&]static\b/.test(location.search)?"static":"js")</script>
 </head><body>
-<div class="bar">Founding 50 now open. First game Thursday 26 November, 6pm.</div>
+<div class="bar"><span class="dk">Founding 50 now open. First game Thursday 26 November, 6pm.</span><span class="mb">Founding 50 open · First game Thu 26 Nov</span></div>
 <header class="nav" id="nav"><div class="wrap in">
   <a class="mark" href="#top" aria-label="FM Padel London"><span class="lg-txt">FM Padel London</span><img class="lg-pri" src="logo-primary.png" alt="" aria-hidden="true"></a>
   <nav class="links" aria-label="Main"><a href="#why">Why join</a><a href="#membership">Founding 50</a><a href="#season">The season</a><a href="#league">The league</a><a href="#faq">FAQ</a></nav>
@@ -217,9 +229,10 @@ footer{padding:var(--s-20) 0 24px}
   <div class="wrap">
     <div class="top rv"><span class="chip"><b></b>Founding 50 now open</span><p>The corporate padel league for construction &amp; FM · London. Every level welcome. The only pressure is on the scoreboard.</p></div>
     <div>
+      <p class="meyebrow rv"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#C6F432" stroke="#000" stroke-width="2"/></svg>FM &amp; Construction padel community · London</p>
       <h1 class="rv d1">The industry, on court.</h1>
-      <p class="lede rv d2">Company teams, a proper season and the right room. The invite-only padel league for the people who build, run and look after London's buildings. No joining fee.</p>
-      <div class="ctas rv d3"><a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><a class="btn btn-white" href="#season">See the season <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
+      <p class="lede rv d2">Company teams, a proper season and the right room. <span class="mhide">The invite-only padel league for the people who build, run and look after London's buildings. No joining fee.</span><span class="mshow">Invite-only. No joining fee.</span></p>
+      <div class="ctas rv d3"><a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><a class="btn btn-white hero-2nd" href="#season">See the season <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
     </div>
   </div>
 </section>

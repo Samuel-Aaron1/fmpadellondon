@@ -1,9 +1,9 @@
 <!doctype html>
 <html lang="en-GB"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>FM Padel London | The industry, on court</title>
-<meta name="description" content="An invite-only padel community for London's construction and facilities management professionals. No joining fee. Founding 50 now open.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>FM Padel London | The corporate padel league for construction and FM</title>
+<meta name="description" content="The corporate padel league for London's construction and FM industry. Invite-only. Seriously fun. No joining fee. Founding 50 now open.">
+<link rel="icon" href="favicon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Inter+Tight:wght@400;500&display=swap" rel="stylesheet">
 <style>/* FM Padel London — tokens v4 ("Framer Club"). Primary reference: Padelon; plus Baseline Club, Running Club, Surfing. */
@@ -191,12 +191,23 @@ footer{padding:var(--s-20) 0 24px}
 @media(prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;filter:none}.statement .w{opacity:1}html{scroll-behavior:auto}}
 @media(max-width:767px){.hero .media img{object-position:60% center}.hero::after{background:linear-gradient(0deg,rgba(1,23,41,.88) 0%,rgba(1,23,41,.55) 45%,rgba(1,23,41,.25) 100%)}}
 @media(max-width:480px){.nav{top:50px}.nav.scrolled{top:0}.nav .btn{height:40px;font-size:.8125rem;padding-left:14px}.nav .btn i{width:30px;height:30px}.mark{font-size:1.05rem}}
+.mark{position:relative;display:block;height:26px}.mark img{height:26px;width:auto;display:block;transition:opacity .35s ease}.mark .lg-pri{position:absolute;left:0;top:0;opacity:0}.nav.scrolled .mark .lg-pri{opacity:1}.nav.scrolled .mark .lg-rev{opacity:0}@media(max-width:480px){.mark,.mark img{height:20px}}
+
+/* Ball icon (brand) */
+.bi{display:inline-block;flex:none;vertical-align:middle}
+.kicker{display:inline-flex;align-items:center;gap:8px}
+.kicker::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--c-hivis);box-shadow:inset 0 0 0 1.5px #000;flex:none}
+.limeblock .kicker::before{background:#fff}
+.perks li::before{content:none}
+.steps .k{display:flex;align-items:flex-start;gap:8px}
+.final .ctas{align-items:center;gap:14px}
+.balls{display:inline-flex;gap:6px;align-items:center}
 </style>
 <script>document.documentElement.classList.add(/[?&]static\b/.test(location.search)?"static":"js")</script>
 </head><body>
 <div class="bar">Founding 50 now open. First game Thursday 26 November, 6pm.</div>
 <header class="nav" id="nav"><div class="wrap in">
-  <a class="mark" href="#top">FM Padel London</a>
+  <a class="mark" href="#top" aria-label="FM Padel London"><img class="lg-rev" src="logo-reversed.png" alt="FM Padel London"><img class="lg-pri" src="logo-primary.png" alt="" aria-hidden="true"></a>
   <nav class="links" aria-label="Main"><a href="#why">Why join</a><a href="#membership">Founding 50</a><a href="#season">The season</a><a href="#league">The league</a><a href="#faq">FAQ</a></nav>
   <a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a>
 </div></header>
@@ -204,10 +215,10 @@ footer{padding:var(--s-20) 0 24px}
 <section class="hero">
   <div class="media"><picture><source media="(max-width: 767px)" srcset="hero-v4c-mobile.webp"><img src="hero-v4c-1920.webp" alt="Four amateur players mid-rally in a padel doubles match on an outdoor court" fetchpriority="high"></picture></div>
   <div class="wrap">
-    <div class="top rv"><span class="chip"><b></b>Founding 50 now open</span><p>Construction &amp; FM padel community · London. Anyone can play. No pressure.</p></div>
+    <div class="top rv"><span class="chip"><b></b>Founding 50 now open</span><p>The corporate padel league for construction &amp; FM · London. Every level welcome. The only pressure is on the scoreboard.</p></div>
     <div>
       <h1 class="rv d1">The industry, on court.</h1>
-      <p class="lede rv d2">An invite-only padel community for the people who build, run and look after London's buildings. Site or office, every level of player. No joining fee.</p>
+      <p class="lede rv d2">Company teams, a proper season and the right room. The invite-only padel league for the people who build, run and look after London's buildings. No joining fee.</p>
       <div class="ctas rv d3"><a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><a class="btn btn-white" href="#season">See the season <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
     </div>
   </div>
@@ -216,7 +227,7 @@ footer{padding:var(--s-20) 0 24px}
 <section class="hidden-until-real" aria-label="Members from"></section>
 
 <section class="statement" id="intro"><div class="wrap">
-  <p data-words>For people across construction <span class="pillimg" style="background-image:url(v4d-drinks.webp)"></span> and FM, including cleaning, security, soft FM, property and workplace. Meet clients, contractors <span class="pillimg" style="background-image:url(v4d-network.webp)"></span> and peers away from the desk and the tender table. <span class="pilltag" style="background:var(--c-hivis)">Every level</span></p>
+  <p data-words>For people across construction <span class="pillimg" style="background-image:url(v4d-drinks.webp)"></span> and FM, including cleaning, security, soft FM, property and workplace. Meet clients, contractors <span class="pillimg" style="background-image:url(v4d-network.webp)"></span> and peers away from the desk and the tender table. Leave the snag list at the office. <span class="pilltag" style="background:var(--c-hivis)">Every level</span></p>
 
   <div class="numbers" id="membership">
     <div class="num rv"><div class="n" data-count="4">4</div><h4>Complimentary games</h4><p class="muted">Four games on us, played at our community sessions within six months of joining.</p></div>
@@ -230,22 +241,22 @@ footer{padding:var(--s-20) 0 24px}
 </div></section>
 
 <section class="limeblock" id="why"><div class="wrap">
-  <div class="shead"><div><p class="kicker">Why join</p><h2 class="rv">More than a game.</h2></div><p class="lede rv d1">Fast, social and easy to pick up. Good for fitness, good for teams, and good fun on a Thursday night.</p></div>
+  <div class="shead"><div><p class="kicker">Why join</p><h2 class="rv">The best meeting you'll have all week.</h2></div><p class="lede rv d1">Also, padel. Quick to learn, hard to put down, and a far better Thursday than another round of emails.</p></div>
   <div class="slider" id="slider">
     <article class="scard"><img src="v4d-network.webp" alt="Two players shaking hands courtside" loading="lazy"><span class="no">01 /4</span><div><h4>The right room</h4><p>Meet clients, contractors and peers from across construction and FM, away from the desk and the tender table.</p></div></article>
-    <article class="scard"><img src="v4d-drinks.webp" alt="Players chatting over drinks after a game" loading="lazy"><span class="no">02 /4</span><div><h4>No joining fee</h4><p>Membership is free. You only pay for the games you play, and your first four are on us.</p></div></article>
-    <article class="scard"><img src="v4d-beginners.webp" alt="Beginners laughing while learning to hold a racket" loading="lazy"><span class="no">03 /4</span><div><h4>By invitation</h4><p>Every member is approved personally, or nominated by someone already in the club.</p></div></article>
-    <article class="scard"><img src="v4d-rally.webp" alt="A player lunging for a volley during a doubles rally" loading="lazy"><span class="no">04 /4</span><div><h4>The game itself</h4><p>Fast, social and easy to pick up. Good for fitness, good for teams, and good fun on a Thursday night.</p></div></article>
+    <article class="scard"><img src="v4d-drinks.webp" alt="Players chatting over drinks after a game" loading="lazy"><span class="no">02 /4</span><div><h4>No joining fee</h4><p>No joining fee. You pay for the games you play. That's it. Your first four are on us.</p></div></article>
+    <article class="scard"><img src="v4d-beginners.webp" alt="Beginners laughing while learning to hold a racket" loading="lazy"><span class="no">03 /4</span><div><h4>By invitation</h4><p>By invitation, not by handicap. Every member is personally reviewed, or nominated by someone already in the club.</p></div></article>
+    <article class="scard"><img src="v4d-rally.webp" alt="A player lunging for a volley during a doubles rally" loading="lazy"><span class="no">04 /4</span><div><h4>The game itself</h4><p>Personally reviewed. Properly organised. Played at a good level, with plenty of room for beginners.</p></div></article>
   </div>
   <div class="sctl"><button type="button" data-s="-1" aria-label="Previous">←</button><button type="button" data-s="1" aria-label="Next">→</button></div>
 </div></section>
 
 <section id="how"><div class="wrap split">
-  <div><p class="kicker">How it works</p><h2 class="rv">Request, get invited, play.</h2>
+  <div><p class="kicker">How it works</p><h2 class="rv">Request. Get invited. Play.</h2>
     <ol class="steps">
-      <li class="rv"><span class="k">01</span><h4>Request</h4><p>Tell us a little about you, your company, your role and your playing level. It takes under a minute.</p></li>
-      <li class="rv d1 on"><span class="k">02</span><h4>Get invited</h4><p>Every request is reviewed personally. Once approved, you get your invite, session dates and your nomination link.</p></li>
-      <li class="rv d2"><span class="k">03</span><h4>Play</h4><p>Turn up, meet the industry and use your complimentary games. Never played? Start with First Serve.</p></li>
+      <li class="rv"><span class="k">01<svg class="bi" width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#C6F432" stroke="#000" stroke-width="2"/></svg></span><h4>Request</h4><p>Tell us about you, your company, your role and your level. Under a minute, which is quicker than most site inductions.</p></li>
+      <li class="rv d1 on"><span class="k">02<svg class="bi" width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#FF4F01" stroke="#000" stroke-width="2"/></svg></span><h4>Get invited</h4><p>Every request is reviewed personally. Once approved, you get your invite, session dates and your nomination link.</p></li>
+      <li class="rv d2"><span class="k">03<svg class="bi" width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#011729" stroke="#000" stroke-width="2"/></svg></span><h4>Play</h4><p>Turn up, meet the industry and use your complimentary games. Toolbox talk optional. Never played? Start with First Serve.</p></li>
     </ol>
     <p style="margin-top:32px" class="rv"><a class="btn btn-black" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></p>
   </div>
@@ -253,11 +264,11 @@ footer{padding:var(--s-20) 0 24px}
 </div></section>
 
 <section id="season" class="alt"><div class="wrap">
-  <div class="shead"><div><p class="kicker">The season</p><h2 class="rv">A year on court.</h2></div><p class="lede rv d1">Leagues, charity cups, networking evenings and ad-hoc matches, all in one community.</p></div>
+  <div class="shead"><div><p class="kicker">The season</p><h2 class="rv">A season worth showing up for.</h2></div><p class="lede rv d1">The corporate league first. Then charity cups, evenings on court and ad-hoc matches, all properly organised.</p></div>
   <div class="bento">
-    <article class="tile img big rv"><img src="v4d-indoor.webp" alt="A doubles match on an indoor court in a brick warehouse" loading="lazy"><div class="when"><span>From February</span><span class="tag">Compete</span></div><div><h3>The corporate league</h3><p>Company teams from across construction and FM, playing for the title.</p></div></article>
+    <article class="tile img big rv"><img src="v4d-indoor.webp" alt="A doubles match on an indoor court in a brick warehouse" loading="lazy"><div class="when"><span>From February</span><span class="tag">Compete</span></div><div><h3>The corporate league</h3><p>Company teams from across construction and FM, playing for the title. And for the bragging rights at Monday's progress meeting.</p></div></article>
     <article class="tile navy rv d1"><div class="when"><span>January</span><span class="tag hv">Give back</span></div><div><h4>Charity cups</h4><p>Starting with the Handover Cup: Construction versus FM, in aid of the Lighthouse Construction Industry Charity.</p></div></article>
-    <article class="tile rv d2"><div class="when"><span>From November</span><span class="tag">Connect</span></div><div><h4>Networking evenings</h4><p>Relaxed games and conversation, with a First Serve slot for anyone new to padel.</p></div></article>
+    <article class="tile rv d2"><div class="when"><span>From November</span><span class="tag">Connect</span></div><div><h4>Evenings on court</h4><p>Relaxed games and good conversation with clients and peers, with a First Serve slot for anyone new to padel.</p></div></article>
     <article class="tile rv d1"><div class="when"><span>Anytime</span><span class="tag">Play</span></div><div><h4>Ad-hoc matches</h4><p>Find a game whenever suits you, through our members' ladder on Rankedin.</p></div></article>
     <article class="tile img rv d2"><img src="v4d-rooftop.webp" alt="A rooftop padel court with the London skyline" loading="lazy"><div class="when"><span>East London</span></div><div><h4>Where we play</h4><p>Padium Canary Wharf and Stratford Padel Club.</p></div></article>
   </div>
@@ -267,29 +278,29 @@ footer{padding:var(--s-20) 0 24px}
 <section class="hidden-until-real" aria-label="Testimonial"></section>
 
 <section id="league" class="dark"><div class="wrap">
-  <div class="shead"><div><p class="kicker">League Season 1</p><h2 class="rv">The corporate league.</h2></div><p class="lede rv d1">Company teams playing each other over a season, a charity cup to open the year, and a way in for complete beginners.</p></div>
+  <div class="shead"><div><p class="kicker">League Season 1</p><h2 class="rv">The corporate league London's built environment has been waiting for.</h2></div><p class="lede rv d1">Company teams playing each other over a season, a charity cup to open the year, and a way in for complete beginners.</p></div>
   <div class="lgrid">
     <article class="lc feature rv"><span class="tag" style="align-self:flex-start;background:#000;border-color:#000;color:#fff">Thu 28 Jan 2027</span><h3>The Handover Cup</h3><p>A charity night in aid of the Lighthouse Construction Industry Charity.</p><div class="vs">Construction <em>vs</em> FM</div></article>
-    <article class="lc rv d1"><span class="tag" style="align-self:flex-start">Company teams</span><h3>Corporate league</h3><p>Company teams from across construction and FM, playing each other over a season. Captains wanted.</p><a class="link" href="#apply">Enter a team →</a></article>
-    <article class="lc rv d2"><span class="tag" style="align-self:flex-start">Any level</span><h3>First Serve</h3><p>Never held a racket? Our First Serve slot is built for you. Already handy? Join the league.</p><a class="link" href="#apply">Request an invite →</a></article>
+    <article class="lc rv d1"><span class="tag" style="align-self:flex-start">Company teams</span><h3>Corporate league</h3><p>Company teams from across construction and FM, playing each other over a season. Settle it on court, not in a tender return. Captains wanted.</p><a class="link" href="#apply">Enter a team →</a></article>
+    <article class="lc rv d2"><span class="tag" style="align-self:flex-start">Any level</span><h3>First Serve</h3><p>Never held a racket? First Serve is built for you. Already handy? The league is waiting.</p><a class="link" href="#apply">Request an invite →</a></article>
   </div>
 </div></section>
 
 <section id="faq"><div class="wrap faqg">
-  <div><p class="kicker">FAQ</p><h2 class="rv">Got questions?</h2><p class="lede" style="margin-top:16px">Anything else, email <a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a>.</p>
-    <div class="faqcard rv"><img src="v4d-drinks.webp" style="object-position:center 30%" alt="" loading="lazy"><div>More than a game.<br>The industry, on court.</div></div></div>
+  <div><p class="kicker">FAQ</p><h2 class="rv">Fair questions.</h2><p class="lede" style="margin-top:16px">Anything else, email <a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a>.</p>
+    <div class="faqcard rv"><img src="v4d-drinks.webp" style="object-position:center 30%" alt="" loading="lazy"><div>The industry, on court.<br>Seriously fun.</div></div></div>
   <div class="rv d1">
-    <details open><summary>I've never played. Is this for me?</summary><p>Yes. Our First Serve slot is designed for complete beginners, and every session is social first.</p></details>
-    <details><summary>Can my company enter a team?</summary><p>Yes. The corporate league is for company teams. Request an invite, mention it in your role, and we'll be in touch about captaining.</p></details>
-    <details><summary>Is there a joining fee?</summary><p>No. Membership is free. You only pay for the games you play, and Founding Members get their first four on us.</p></details>
+    <details open><summary>I've never played. Is this for me?</summary><p>Yes. Our First Serve slot is designed for complete beginners, and every session is social first. Every level welcome.</p></details>
+    <details><summary>Can my company enter a team?</summary><p>Yes. The corporate league is for company teams. Request an invite, mention it in your role, and we'll talk captaincy.</p></details>
+    <details><summary>Is there a joining fee?</summary><p>No. You pay for the games you play. That's it, and Founding Members get their first four on us.</p></details>
     <details><summary>Who can join?</summary><p>People across construction and FM, including cleaning, security, soft FM, property and workplace. Site or office, every level of player. Every member is approved personally, or nominated by someone already in the club.</p></details>
     <details><summary>Where do we play?</summary><p>In East London, at Padium Canary Wharf and Stratford Padel Club.</p></details>
   </div>
 </div></section>
 
 <section id="apply" class="alt"><div class="wrap split" style="align-items:start">
-  <div><p class="kicker">Request an invite</p><h2 class="rv">Claim your spot.</h2><p class="lede rv d1" style="margin-top:16px">Every request is reviewed personally. We'll be in touch with session dates and how to use your complimentary games.</p>
-    <ul class="perks rv d2"><li>No joining fee</li><li>Four complimentary games for the Founding 50</li><li>First Serve slot for complete beginners</li></ul></div>
+  <div><p class="kicker">Request an invite</p><h2 class="rv">Request your invite.</h2><p class="lede rv d1" style="margin-top:16px">We review every one personally, and we'll be in touch with session dates and how to use your complimentary games.</p>
+    <ul class="perks rv d2"><li><svg class="bi" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#C6F432" stroke="#000" stroke-width="2"/></svg>No joining fee</li><li><svg class="bi" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#FF4F01" stroke="#000" stroke-width="2"/></svg>Four complimentary games for the Founding 50</li><li><svg class="bi" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#011729" stroke="#000" stroke-width="2"/></svg>First Serve slot for complete beginners</li></ul></div>
   <div class="formcard rv d1"><form id="apply-form" novalidate>
       <div class="f"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
       <div class="f"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
@@ -321,7 +332,7 @@ footer{padding:var(--s-20) 0 24px}
       <input type="hidden" name="source" id="source">
       <div class="full"><label class="check"><input type="checkbox" id="consent" name="marketing_consent" value="yes"><span>Send me occasional news about sessions, the league and events. Unsubscribe any time.</span></label></div>
       <p class="privacy full">We use your details only to review your application and run FM Padel London membership, complimentary games and nominations. We never sell your data, and only send news if you tick the box. Questions or deletion: <a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a>.</p>
-      <div class="full"><button class="btn btn-primary" type="submit">Submit application</button></div>
+      <div class="full"><button class="btn btn-primary" type="submit">Request my invite</button></div>
       <p class="status full" id="status" role="status" aria-live="polite"></p>
     </form>
 
@@ -343,8 +354,8 @@ footer{padding:var(--s-20) 0 24px}
 </div></section>
 
 <section class="final"><img src="v4d-charity.webp" alt="" loading="lazy"><div class="wrap">
-  <h2 class="rv">Start playing this November.</h2><p class="lede rv d1">Founding 50 now open. First game Thursday 26 November, 6pm.</p>
-  <div class="ctas rv d2"><a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
+  <h2 class="rv">Your next client meeting has a net in the middle.</h2><p class="lede rv d1">Founding 50 now open. First game Thursday 26 November, 6pm.</p>
+  <div class="ctas rv d2"><a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><span class="balls"><svg class="bi" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#C6F432" stroke="#000" stroke-width="2"/></svg><svg class="bi" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#FF4F01" stroke="#000" stroke-width="2"/></svg><svg class="bi" width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#fff" stroke="#000" stroke-width="2"/></svg></span></div>
 </div></section>
 </main>
 <footer><div class="wrap">
@@ -355,7 +366,7 @@ footer{padding:var(--s-20) 0 24px}
     <div><h4>Contact</h4><a href="mailto:hello@fmpadellondon.com">hello@fmpadellondon.com</a><a href="https://www.instagram.com/fmpadellondon/" target="_blank" rel="noopener">Instagram</a></div>
   </div>
   <div class="mega" aria-hidden="true">FM Padel<span class="ball"></span></div>
-  <div class="small"><span>&copy; <span id="yr">2026</span> FM Padel London</span><span>Illustrative imagery</span></div>
+  <div class="small"><span>&copy; <span id="yr">2026</span> FM Padel London</span><span class="balls"><svg class="bi" width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#C6F432" stroke="#000" stroke-width="2"/></svg><svg class="bi" width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#FF4F01" stroke="#000" stroke-width="2"/></svg><svg class="bi" width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#011729" stroke="#000" stroke-width="2"/></svg></span><span>Illustrative imagery</span></div>
 </div></footer>
 <script>
 /* ===================== CONFIG: EDIT THESE ===================== */

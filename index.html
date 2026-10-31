@@ -225,6 +225,13 @@ footer{padding:var(--s-20) 0 24px}
 .hero .ctas .btn{width:100%;justify-content:space-between}
 .hero .meyebrow{display:flex;align-items:center;gap:8px;margin:0 0 14px;font:600 .6875rem/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.85);white-space:nowrap}
 }
+/* v4k: calm desktop hero */
+.hero .meyebrow{display:flex;align-items:center;gap:8px;margin:0 0 18px;font:600 .75rem/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.9)}
+.hero .wrap{justify-content:flex-end}
+.hero::after{background:linear-gradient(90deg,rgba(1,23,41,.62) 0%,rgba(1,23,41,.28) 38%,rgba(1,23,41,0) 62%),linear-gradient(0deg,rgba(1,23,41,.35),transparent 35%)}
+.hero .media img{object-position:center 40%}
+@media(max-width:767px){.hero::after{background:linear-gradient(0deg,rgba(1,23,41,.8) 0%,rgba(1,23,41,.35) 40%,rgba(1,23,41,0) 70%)}.hero .media img{object-position:center}.hero .meyebrow{font-size:.625rem;letter-spacing:.08em;white-space:normal}.hero .wrap{padding-bottom:max(88px,calc(env(safe-area-inset-bottom) + 72px))}.hero .lede{margin-bottom:28px}}
+.seelink{display:none}@media(min-width:900px){.seelink{display:inline-block;margin-left:22px;align-self:center;color:#fff;font-size:15px;opacity:.85;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;text-decoration-color:rgba(255,255,255,.45);transition:opacity .2s,text-decoration-color .2s}.seelink:hover{opacity:1;text-decoration-color:#fff}}
 </style>
 <script>document.documentElement.classList.add(/[?&]static\b/.test(location.search)?"static":"js")</script>
 </head><body>
@@ -236,14 +243,13 @@ footer{padding:var(--s-20) 0 24px}
 </div></header>
 <main id="top">
 <section class="hero">
-  <div class="media"><picture><source media="(max-width: 767px)" srcset="hero-v4c-mobile.webp"><img src="hero-v4c-1920.webp" alt="Four amateur players mid-rally in a padel doubles match on an outdoor court" fetchpriority="high"></picture></div>
+  <div class="media"><picture><source media="(max-width: 767px)" srcset="hero-v4k-mobile.jpg"><img src="hero-v4k-2000.jpg" alt="Players mid-rally on a sunny outdoor padel court" fetchpriority="high"></picture></div>
   <div class="wrap">
-    <div class="top rv"><span class="chip"><b></b>Founding 50 now open</span><p>The corporate padel league for construction &amp; FM · London. Every level welcome. The only pressure is on the scoreboard.</p></div>
     <div>
       <p class="meyebrow rv"><svg width="10" height="10" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10.5" fill="#C6F432" stroke="#000" stroke-width="2"/></svg>FM &amp; Construction padel community · London</p>
       <h1 class="rv d1">The industry, on court.</h1>
-      <p class="lede rv d2">Company teams, a proper season and the right room. <span class="mhide">The invite-only padel league for the people who build, run and look after London's buildings. No joining fee.</span><span class="mshow">Invite-only. No joining fee.</span></p>
-      <div class="ctas rv d3"><a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><a class="btn btn-white hero-2nd" href="#season">See the season <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a></div>
+      <p class="lede rv d2">The invite-only padel league for London's construction and FM industry.</p>
+      <div class="ctas rv d3"><a class="btn btn-lime" href="#apply">Request an invite <i aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></i></a><a class="seelink" href="#season">See the season →</a></div>
     </div>
   </div>
 </section>
